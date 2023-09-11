@@ -5,32 +5,53 @@ export default {
 </script>
 
 <template>
-    <div class="work row">
-        <div class="col">
+    <div id="work" class="work row">
+        <h2>WORK</h2>
+        <div class="col-6 column-1">
             <div class="card">
-                <img class="" src="../assets/images/Dito.png" alt="Card image cap">
+                <img class="" src="../assets/images/mockup-dito.png" alt="Card image cap">
                 <div class="card-body">
                     <h3>DITO PRO</h3>
                     <p>Réalisation d'un site vitrine de dépannage informatique</p>
                 </div>
             </div>
             <div class="card">
-                
+                <img class="" src="../assets/images/groupo.png" alt="Card image cap">
+                <div class="card-body">
+                    <h3>GROUPOMANIA</h3>
+                    <p>Réalisation d'un réseau social d'entreprise</p>
+                </div>
             </div>
             <div class="card">
-                
+                <img class="" src="../assets/images/piiquante.png" alt="Card image cap">
+                <div class="card-body">
+                    <h3>PIIQUANTE</h3>
+                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-6 column-2">
             <div class="card">
-
-</div>
-<div class="card">
-    
-</div>
-<div class="card">
-    
-</div>
+                <img class="" src="../assets/images/orinoco.png" alt="Card image cap">
+                <div class="card-body">
+                    <h3>PIIQUANTE</h3>
+                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="" src="../assets/images/OhMyFood.png" alt="Card image cap">
+                <div class="card-body">
+                    <h3>PIIQUANTE</h3>
+                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="" src="../assets/images/mockup_reservia.png" alt="Card image cap">
+                <div class="card-body">
+                    <h3>PIIQUANTE</h3>
+                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -38,10 +59,22 @@ export default {
 <style lang="scss">
     .work{
         height: 100vh;
-        background-color: lightgray;
+        h2{
+            text-align: center;
+            margin: 50px;
+            width: 100%;
+            border-bottom: 1px black solid;
+        }
+        .column-1{
+            .card{ float: right; }
+            
+        }
+        .column-2{
+            float: left;
+        }
         .card{
-            width: 70%;
-            margin: 15px auto;
+            width: 80%;
+            margin: 10px 0;
             overflow: hidden;
             .card-body{
                 position: absolute;

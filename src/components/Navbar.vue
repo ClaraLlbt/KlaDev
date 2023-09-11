@@ -39,7 +39,7 @@ export default {
                 <a class="nav-link" href="#skills">SKILLS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">WORK</a>
+                <a class="nav-link" href="#work">WORK</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-disabled="true">CONTACT</a>
