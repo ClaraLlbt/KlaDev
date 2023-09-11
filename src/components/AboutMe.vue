@@ -6,23 +6,36 @@ export default {
 </script>
 
 <template>
-  
-        <div class="about-me justify-content-start">
-        <div class="has-animation animation-ltr animate-in">
-            <h1>WELCOME USERS</h1>
-        </div>
-        <div class="has-animation animation-rtl animate-in">
-            <p class="text">Je m'appelle Clara Laliberté et je suis un développeur web junior basé à Boulogne-sur-Mer. Passionné par la création de sites web dynamiques et conviviaux, j'ai acquis des compétences solides en HTML, CSS et JavaScript. Mon objectif est de contribuer à des projets innovants et d'apprendre continuellement pour évoluer dans ce domaine passionnant. Mon dévouement et ma créativité font de moi un atout précieux pour toute équipe de développement web.</p>
-        </div>
+  <div class="row about-me">
+    <div class="col-lg-6 col-sm-5 justify-content-start">
+      <div class="has-animation animation-ltr animate-in">
+        <h1>WELCOME USERS</h1>
+      </div>
+      <div class="has-animation animation-rtl animate-in">
+        <p class="text">Je m'appelle Clara Laliberté et je suis un développeur web junior basé à Boulogne-sur-Mer. Passionné par la création de sites web dynamiques et conviviaux, j'ai acquis des compétences solides en HTML, CSS et JavaScript. Mon objectif est de contribuer à des projets innovants et d'apprendre continuellement pour évoluer dans ce domaine passionnant. Mon dévouement et ma créativité font de moi un atout précieux pour toute équipe de développement web.</p>
+      </div>
+
+      <div class="networks-link">
+        <ul>
+          <li><a href=""><i class="bi bi-linkedin"></i></a></li>
+          <li><a href=""><i class="bi bi-facebook"></i></a></li>
+          <li><a href=""><i class="bi bi-instagram"></i></a></li>
+        </ul>
     </div>
-    <div class="">
-      <img src="../assets/Copie de Sans titre.png" alt="">
-    </div>
+  </div>
+  <div class="col-lg-6 col-sm-5">
+    <img src="../assets/Copie de Sans titre.png" alt="">
+  </div>
+
+  </div>
       
 </template>
 
 <style lang="scss">
 .about-me{
+  display: flex;
+  align-items: center;
+  height: 80%;
     .has-animation{
         position: relative;
         margin: 10px;
@@ -73,6 +86,22 @@ export default {
             }
         }
         
+    }
+    .networks-link{
+      opacity: 0;
+      animation: textHidden 2s 2.5s forwards;
+      ul{
+        padding: 0;
+        list-style: none;
+        display: inline-flex;
+        width: 30%;
+        justify-content: space-between;
+        li{
+          margin: 0 5px;
+          font-size: xx-large;
+        }
+      }
+      
     }
 }
 

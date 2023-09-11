@@ -1,6 +1,30 @@
 <script>
+import { useDark, useToggle } from "@vueuse/core";
 export default {
-    name: "Navbar"
+    name: "Navbar",
+    data(){
+      return {
+        dark: '',
+      }
+    },
+    mounted(){
+    //   this.darkMod();
+    },
+    methods: {
+      //Darkmod function 
+    //   darkMod(){
+    //     const isDark = useDark();
+    //     const toggleDark = useToggle(isDark)
+    //     this.dark = isDark
+
+    //     console.log(this.dark);
+
+    //     const btnDkMod = document.querySelector('.item-dark-reader')
+    //     btnDkMod.addEventListener('click', function(){   
+    //      toggleDark()
+    //     })
+    //   },
+    }
     
 }
 </script>
@@ -12,14 +36,20 @@ export default {
                 <a class="nav-link active" aria-current="page" href="#">ABOUT ME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">EXPERIENCE</a>
+                <a class="nav-link" href="#skills">SKILLS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">WORKS</a>
+                <a class="nav-link" href="#">WORK</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-disabled="true">CONTACT</a>
             </li>
+            <!-- <li class="item-dark-reader">
+                <button id="darkModeButton" type="button" role="button" class="btn" aria-label="Bouton pour basculer en mode sombre">
+                    <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
+                    <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
+                </button>
+            </li> -->
         </ul>
     </div>
 </template>
@@ -34,9 +64,6 @@ export default {
         .nav-item{
             margin: .5em 1em;
         }
-        .nav-link{
-            color: black;
-        }
     }
     .nav * {
         box-sizing: border-box;
@@ -44,7 +71,7 @@ export default {
     }
     .nav a {
   padding: .5em .8em;
-  color: rgba(255,255,255,.5);
+  color: black;
   position: relative;
   text-decoration: none;
 }

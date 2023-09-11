@@ -1,10 +1,20 @@
 @import './base.css';
+/* Darkmode Design */
+.dark{
+  color-scheme: dark;
+  --color-background: #16171d; /* it's better to use a dark grey color instead of pure black */
+}  
+
+.dark a, .dark .navbar .nav a, .dark .about-me .has-animation.animate-in h1, .dark .about-me .has-animation.animate-in p {
+  color: #adb5bd;
+
+}
 
 #app {
   max-width: 1280px;
   height: 100vh;
   margin: 0 auto;
-
+  color: black;
   font-family: 'Noto Serif Display', serif;
 }
 
@@ -22,10 +32,6 @@ main{
   height: 70%;
 }
 
-@media (hover: hover) {
-  a:hover {
-  }
-}
 
 @media (min-width: 1024px) {
   body {
