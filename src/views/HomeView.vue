@@ -14,6 +14,9 @@ export default {
 
   
   <AboutMe />
+
+  <Skills />
+
   <Work />
 </template>
 
