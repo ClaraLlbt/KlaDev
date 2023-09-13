@@ -17,7 +17,9 @@
   color: black;
   font-family: 'Noto Serif Display', serif;
 }
-
+ul{
+  list-style: none;
+}
 a,
 .green {
   text-decoration: none;
