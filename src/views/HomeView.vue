@@ -5,11 +5,65 @@ import Skills from '../components/Skills.vue';
 import Work from '../components/Work.vue';
 export default {
   name : "home",
-  components : { AboutMe, Navbar, Skills, Work }
+  components : { AboutMe, Navbar, Skills, Work },
+  mounted(){
+    this.navbarLeft()
+  },
+  methods: {
+    navbarLeft(){
+      const el = document.querySelector('nav')
+      const li = document.querySelectorAll('nav .nav-item')
+      console.log(li);
+            
+      document.addEventListener('scroll', () => { 
+        const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
+        console.log(scrollTop)
+        const topElementToTopViewport = el.getBoundingClientRect(scrollHeight).top
+        console.log(topElementToTopViewport);
+        if(scrollTop > 260){
+          el.classList.add('active')
+          li[1].classList.add('show')
+          li[0].classList.add('show')
+          li[2].classList.add('show')
+          li[3].classList.add('show')
+          li[4].classList.add('show')
+        }
+        else if(scrollTop == 0){
+          el.classList.remove('active')
+        }
+      });
+    }
+  }
 }
 </script>
 
 <template>
+  
+  <nav>
+    <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="stretch" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="" href="#skills"><i class="bi bi-gear"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="" href="#work"><i class="bi bi-code-slash"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="" aria-disabled="true"><i class="bi bi-envelope-at-fill"></i></a>
+            </li>
+
+            <li class="nav-item item-dark">
+                <button id="darkModeButton" type="button" role="button" class="btn" aria-label="Bouton pour basculer en mode sombre">
+                    <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
+                    <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
+                </button>
+            </li>
+        </ul>
+  </nav>
+
+
   <Navbar />
 
   
@@ -20,6 +74,55 @@ export default {
   <Work />
 </template>
 
-<style>
+<style lang="scss" scoped>
+nav{
+  position: fixed;
+  z-index: 1;
+  left: 5%;
+  top: 25%;
+  opacity: 0;
+  transition: all 1s ease;
+    ul{
+      display: grid;
+      height: 500px;
+      align-content: center;
+      li{
+        background: #F5F5F5;
+        box-shadow: inset 1px 1px 0px white, 1px 1px 3px grey;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 3px;
+        &:hover{
+          transform: scale(1.1);
+          transition: transform 1s ease;
+        }
+        a i{
+          font-size: 25px;
+          color: #E8E8E8;
+          &:hover{
+            color: grey;
+          }
+        }
+      }
+      li.item-dark{
+        button i{ color: white;}
+      }
+    }
+    li:nth-child(1), li:nth-child(2), li:nth-child(3),li:nth-child(4), li:nth-child(5) { transform: translateY(-425px) }
+    li.show{
+      transform: translateY(0);
+      transition: transform 3s ease-in-out;
+    }
+    
+    
+}
+nav.active{
+  opacity: 1;
+  transition: opacity 3s ease;
+}
 
 </style>

@@ -6,8 +6,9 @@ export default {
 </script>
 
 <template>
-  <div class="row about-me">
-    <div class="col-lg-6 col-sm-5 justify-content-start">
+  <div class="about-me container">
+    <div class="row">
+      <div class="col-12 col-lg-6 justify-content-start">
       <div class="has-animation animation-ltr animate-in">
         <h1>WELCOME USERS</h1>
       </div>
@@ -23,9 +24,10 @@ export default {
         </ul>
     </div>
   </div>
-  <div class="col-lg-6 col-sm-5">
+  <div class="col-12 col-lg-6">
     <img src="../assets/Copie de Sans titre.png" alt="">
   </div>
+    </div>
 
   </div>
       
@@ -36,6 +38,9 @@ export default {
   display: flex;
   align-items: center;
   height: 80%;
+  .row{
+    align-items: center;
+  }
     .has-animation{
         position: relative;
         margin: 10px;

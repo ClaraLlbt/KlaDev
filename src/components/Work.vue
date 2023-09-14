@@ -30,9 +30,10 @@ export default {
 </script>
 
 <template>
-    <div id="work" class="work row">
+    <div id="work" class="work container">
         <h2 class="h2-work">WORK</h2>
-        <div class="col-6 cln-l">
+        <div class="row">
+            <div class="col-6 cln-l">
             <div class="card">
                 <img class="" src="../assets/images/mockup-dito.png" alt="Card image cap">
                 <div class="card-body">
@@ -77,6 +78,7 @@ export default {
                     <p>Réalisation d'un site vitrine de dépannage informatique</p>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </template>

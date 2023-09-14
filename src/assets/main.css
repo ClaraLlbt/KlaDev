@@ -3,6 +3,8 @@
 .dark{
   color-scheme: dark;
   --color-background: #16171d; /* it's better to use a dark grey color instead of pure black */
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
 }  
 
 .dark a, .dark .navbar .nav a, .dark .about-me .has-animation.animate-in h1, .dark .about-me .has-animation.animate-in p {
@@ -11,10 +13,8 @@
 }
 
 #app {
-  max-width: 1280px;
   height: 100vh;
   margin: 0 auto;
-  color: black;
   font-family: 'Noto Serif Display', serif;
 }
 ul{
