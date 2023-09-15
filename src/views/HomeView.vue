@@ -1,25 +1,36 @@
 <script>
+//import darkMod
+import { darkMode, scrollEvent } from '../utils';
+import { useDark } from "@vueuse/core";
+
+//import components
 import AboutMe from '../components/AboutMe.vue';
 import Navbar from '../components/Navbar.vue';
 import Skills from '../components/Skills.vue';
 import Work from '../components/Work.vue';
+
 export default {
   name : "home",
   components : { AboutMe, Navbar, Skills, Work },
+  
+  data(){
+      return {
+        dark: useDark(),
+      }
+    },
   mounted(){
+    darkMode()
+    scrollEvent()
     this.navbarLeft()
   },
   methods: {
     navbarLeft(){
       const el = document.querySelector('nav')
       const li = document.querySelectorAll('nav .nav-item')
-      console.log(li);
             
       document.addEventListener('scroll', () => { 
         const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
-        console.log(scrollTop)
         const topElementToTopViewport = el.getBoundingClientRect(scrollHeight).top
-        console.log(topElementToTopViewport);
         if(scrollTop > 260){
           el.classList.add('active')
           li[1].classList.add('show')
@@ -28,9 +39,9 @@ export default {
           li[3].classList.add('show')
           li[4].classList.add('show')
         }
-        else if(scrollTop == 0){
-          el.classList.remove('active')
-        }
+        // else if(scrollTop == 0){
+        //   el.classList.remove('active')
+        // }
       });
     }
   }
@@ -42,7 +53,7 @@ export default {
   <nav>
     <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="stretch" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i></a>
+                <a class="" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i></a>
             </li>
             <li class="nav-item">
                 <a class="" href="#skills"><i class="bi bi-gear"></i></a>
@@ -87,19 +98,12 @@ nav{
       height: 500px;
       align-content: center;
       li{
-        background: #F5F5F5;
-        box-shadow: inset 1px 1px 0px white, 1px 1px 3px grey;
-        border-radius: 50%;
         height: 50px;
         width: 50px;
         display: grid;
         align-items: center;
         justify-content: center;
         margin: 10px 3px;
-        &:hover{
-          transform: scale(1.1);
-          transition: transform 1s ease;
-        }
         a i{
           font-size: 25px;
           color: #E8E8E8;
@@ -109,7 +113,7 @@ nav{
         }
       }
       li.item-dark{
-        button i{ color: white;}
+        button i{ color: grey;}
       }
     }
     li:nth-child(1), li:nth-child(2), li:nth-child(3),li:nth-child(4), li:nth-child(5) { transform: translateY(-425px) }

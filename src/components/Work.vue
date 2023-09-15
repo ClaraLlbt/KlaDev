@@ -10,14 +10,12 @@ export default {
             const h2 = document.querySelector('.h2-work')
             const cln1 = document.querySelector('.cln-l')
             const cln2 = document.querySelector('.cln-r')
-            console.log(h2);
+
             document.addEventListener('scroll', () => { 
                 const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
-                console.log(scrollTop)
                 const topElementToTopViewport = el.getBoundingClientRect(scrollHeight).top
-                console.log(topElementToTopViewport);
                 if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.30){
-                    console.log('hey');
+                    
                     h2.classList.add('active')
                     cln1.classList.add('slidel')
                     cln2.classList.add('slider')
