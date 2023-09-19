@@ -6,34 +6,54 @@
   --color-heading: var(--vt-c-text-dark-1);
   --color-text: var(--vt-c-text-dark-2);
 }  
-
 .dark a, .dark .navbar .nav a, .dark .about-me .has-animation.animate-in h1, .dark .about-me .has-animation.animate-in p, .dark .card {
   color: #adb5bd;
   background: none;
 
 }
 
+/* Global Design */
+body{
+  background: #00000003;
+}
 #app {
   height: 100vh;
   margin: 0 auto;
   font-family: 'Noto Serif Display', serif;
 }
 
-
+h2{
+  text-align: center;
+  margin: 50px 0;
+  width: 100%;
+  transform: translateX(-1000px);
+  opacity: 0;
+  /* border-bottom: 1px black solid; */
+}
+h2::after{
+  display: block;
+  content: "";
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px black solid;
+}
+h2.active{
+   animation: titleSlide 1.5s forwards;
+}
 
 /* Navbar Animations*/
 .nav * {
   box-sizing: border-box;
   transition: all .35s ease;
 }
-.nav a, .nav button {
+.nav a, button {
   padding: .5em .8em;
   color: black;
   position: relative;
   text-decoration: none;
 }
 .nav a:hover{ color: black;}
-.nav a::before,.nav a::after, .nav button::before, .nav button::after {
+.nav a::before,.nav a::after, button::before, button::after {
   content: '';
   height: 14px;
   width: 14px;
@@ -41,7 +61,7 @@
   transition: all .35s ease;
   opacity: 0;
 }
-.nav a::before, .nav button::before {
+.nav a::before, button::before {
   content: '';
   right: 0;
   top: 0;
@@ -49,7 +69,7 @@
   border-right: 2px solid black;
   transform: translate(-100%, 50%);
 }
-.nav a:after, .nav button::after {
+.nav a:after, button::after {
   content: '';
   left: 0;
   bottom: 0;
@@ -58,13 +78,16 @@
   transform: translate(100%, -50%)
 }
 
-.nav a:hover:before,.nav a:hover:after, .nav button:hover::before, .nav button:hover::after {
+.nav a:hover:before,.nav a:hover:after, button:hover::before, button:hover::after {
   transform: translate(0,0);
   opacity: 1;
 }
 
 ul{
   list-style: none;
+}
+.card{
+  background: none;
 }
 a,
 .green {
@@ -80,10 +103,24 @@ main{
   height: 70%;
 }
 
+/* GLOBAL KEYFRAMES */
+@keyframes titleSlide{
+  0%{
+      transform: translateX(-1000px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
 
+
+/* Responsive versions */
 @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
   }
 }
+

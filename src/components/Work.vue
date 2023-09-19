@@ -34,6 +34,7 @@ export default {
             <div class="col-6 cln-l">
             <div class="card">
                 <img class="" src="../assets/images/mockup-dito.png" alt="Card image cap">
+                <i class="bi bi-bookmark-star-fill" data-v-3309a9c7=""></i>
                 <div class="card-body">
                     <h3>DITO PRO</h3>
                     <p>Réalisation d'un site vitrine de dépannage informatique</p>
@@ -85,25 +86,15 @@ export default {
     .work{
         overflow: hidden;
         margin: 50px auto;
-        h2{
-            text-align: center;
-            margin: 50px 0;
-            width: 100%;
-            transform: translateX(-1000px);
-            opacity: 0;
-            // border-bottom: 1px black solid;
-            &::after{
-                content: "";
-                width: 90%;
-                position: absolute;
-                bottom: -20px;
-                left: 5%;
-                border-bottom: 1px black solid;
-                right: 0;
+        .card i{
+            position: absolute;
+            font-size: 60px;
+            top: -17px;
+            left: -7px;
+            color: #c3f672;
+            &::before{
+                text-shadow: 1px 1px 2px black;;
             }
-        }
-        h2.active{
-           animation: titleSlide 2s forwards;
         }
         .cln-l{
             transform: translateY(1000px);
@@ -111,7 +102,7 @@ export default {
             .card{ float: right; }
         }
         .cln-l.slidel{
-            animation: slideCards 2s 2s forwards;
+            animation: slideCards 1.5s 1.7s forwards;
         }
         .cln-r{
             transform: translateY(1000px);
@@ -119,7 +110,7 @@ export default {
             float: left;
         }
         .cln-r.slider{
-            animation: slideCards 2s 1.7s forwards;
+            animation: slideCards 1.5s 1.5s forwards;
         }
         .card{
             width: 80%;
@@ -154,16 +145,6 @@ export default {
     }
 
 // Animations
-@keyframes titleSlide{
-    0%{
-        transform: translateX(-1000px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
 @keyframes slideCards {
     0%{

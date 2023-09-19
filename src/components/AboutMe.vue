@@ -53,10 +53,10 @@ export default {
         }
         &.animate-in{
             h1, p{
-                animation: textHidden 0.1s 2.5s forwards;
+                animation: textHidden 0.1s 1.5s forwards;
             }
             p{
-                animation: textHidden 0.1s 2.8s forwards;
+                animation: textHidden 0.1s 1.8s forwards;
             }
             &:before, &:after {
                 content: '';
@@ -76,18 +76,18 @@ export default {
         }
         &.animation-ltr.animate-in {
             &:before {
-                animation: revealLTR 1.8s 1.5s ease;
+                animation: revealLTR 1.8s 0.8s ease;
             }
             &:after {
-                animation: revealLTR 1s 2s ease;
+                animation: revealLTR 1s 1.2s ease;
             }
         }
         &.animation-rtl.animate-in {
             &:before {
-                animation: revealRTL 1.8s 1.5s ease;
+                animation: revealRTL 1.8s 0.8s ease;
             }
             &:after {
-                animation: revealRTL 1s 2s ease;
+                animation: revealRTL 1s 1.2s ease;
             }
         }
         

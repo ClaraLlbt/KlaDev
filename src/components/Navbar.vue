@@ -26,7 +26,7 @@ export default {
                 <a class="nav-link" href="#work">WORK</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-disabled="true">CONTACT</a>
+                <a class="nav-link" href="#contact">CONTACT</a>
             </li>
 
             <li class="nav-item item-dark">
@@ -42,7 +42,7 @@ export default {
 <style lang="scss">
 .navbar{
   opacity: 0;
-  animation: textHidden 2s 2.5s forwards;
+  animation: textHidden 2s 1.8s forwards;
   justify-content: center;
   .nav{
     font-size: x-large;

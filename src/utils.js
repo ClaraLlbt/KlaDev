@@ -19,16 +19,4 @@ export function darkMode() {
     
   }
 
-//Scroll FUNCTION
-export function scrollEvent() {
-    document.addEventListener('scroll', () => { 
-        const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
-        // const topElementToTopViewport = el.getBoundingClientRect(scrollHeight).top
-
-        console.log(scrollTop);
-        // if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.30){
-            
-        // }
-    });
-    
-  }
+ 
