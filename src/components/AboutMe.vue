@@ -1,144 +1,136 @@
 <script>
 export default {
-    name: 'AboutMe'
-    
+  name: 'AboutMe',
+  data() {
+    return {};
+  },
+  mounted() {
+    const roundedBckgd = document.querySelector('.rounded-bckgd')
+    const hasAnimation = document.querySelectorAll('.has-animation')
+    const networksLink = document.querySelector('.networks-link')
+    setTimeout(() => {
+      if(document.readyState != 200 ){
+        roundedBckgd.classList.add('effect') 
+        hasAnimation[0].classList.add('animate-in')
+        hasAnimation[1].classList.add('animate-in')
+        networksLink.classList.add('animate')
+      }
+    }, 1300);
+  },
 }
 </script>
 
 <template>
   <div class="about-me container">
-    <div class="row">
-      <div class="col-12 col-lg-6 justify-content-start">
-      <div class="has-animation animation-ltr animate-in">
-        <h1>WELCOME USERS</h1>
+    <div class="row presentation">
+      <div class="col-12 col-lg-6 presentation-txt justify-content-start">
+        <div class="has-animation">
+          <h2>APPELLEZ-MOI KALA</h2>
+          <h2>Développeur Web</h2>
+        </div>
+        <div class="has-animation">
+          <p class="text">Développeur web Junior basée à Boulogne-sur-Mer. Passionnée par la création de sites web dynamiques et conviviaux, j'ai acquis des compétences solides en HTML, CSS et JavaScript. Mon objectif est de contribuer à des projets innovants et d'apprendre continuellement pour évoluer dans ce domaine passionnant. Mon dévouement et ma créativité font de moi un atout précieux pour toute équipe de développement web.</p>
+        </div>
+        <div class="networks-link">
+          <ul>
+            <li><a href=""><i class="bi bi-linkedin"></i></a></li>
+            <li><a href=""><i class="bi bi-facebook"></i></a></li>
+            <li><a href=""><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
       </div>
-      <div class="has-animation animation-rtl animate-in">
-        <p class="text">Je m'appelle Clara Laliberté et je suis un développeur web junior basé à Boulogne-sur-Mer. Passionné par la création de sites web dynamiques et conviviaux, j'ai acquis des compétences solides en HTML, CSS et JavaScript. Mon objectif est de contribuer à des projets innovants et d'apprendre continuellement pour évoluer dans ce domaine passionnant. Mon dévouement et ma créativité font de moi un atout précieux pour toute équipe de développement web.</p>
+      <div class="col-sm-12 col-lg-6">
+        <div class="rounded-bckgd">
+            <h1>•  Bienvenue   •</h1>
+        </div>
       </div>
-
-      <div class="networks-link">
-        <ul>
-          <li><a href=""><i class="bi bi-linkedin"></i></a></li>
-          <li><a href=""><i class="bi bi-facebook"></i></a></li>
-          <li><a href=""><i class="bi bi-instagram"></i></a></li>
-        </ul>
     </div>
-  </div>
-  <div class="col-12 col-lg-6">
-    <img src="../assets/Copie de Sans titre.png" alt="">
-  </div>
-    </div>
-
-  </div>
-      
+  </div>    
 </template>
 
 <style lang="scss">
 .about-me{
+  position: relative;
   display: flex;
   align-items: center;
   height: 80%;
-  .row{
+  .presentation{
     align-items: center;
-  }
-    .has-animation{
+    .presentation-txt{
+      .has-animation{
         position: relative;
         margin: 10px;
-        h1, p{
-            color: black;
-            opacity: 0;
+        h2, p{
+          opacity: 0;
         } 
         p{ 
-            font-size: larger;
+          font-size: larger;
         }
         &.animate-in{
-            h1, p{
-                animation: textHidden 0.1s 1.5s forwards;
-            }
-            p{
-                animation: textHidden 0.1s 1.8s forwards;
-            }
-            &:before, &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 100%;
-                z-index: 10;
-            }
-            &:before {
-                background-color: #C1FF72;
-            }
-            &:after {
-                background-color: black;
-                animation-delay: .5s;
-            }
-        }
-        &.animation-ltr.animate-in {
-            &:before {
-                animation: revealLTR 1.8s 0.8s ease;
-            }
-            &:after {
-                animation: revealLTR 1s 1.2s ease;
-            }
-        }
-        &.animation-rtl.animate-in {
-            &:before {
-                animation: revealRTL 1.8s 0.8s ease;
-            }
-            &:after {
-                animation: revealRTL 1s 1.2s ease;
-            }
-        }
-        
-    }
-    .networks-link{
-      opacity: 0;
-      animation: textHidden 2s 2.5s forwards;
-      ul{
-        padding: 0;
-        list-style: none;
-        display: inline-flex;
-        width: 30%;
-        justify-content: space-between;
-        li{
-          margin: 0 5px;
-          font-size: xx-large;
+          h2{
+            animation: textHidden 2s 1.3s ease forwards;
+          }
+          p{
+            animation: textHidden 2s 1.5s ease forwards;
+          }
         }
       }
-      
+      .networks-link{
+        opacity: 0;
+        &.animate{
+          animation: textHidden 2.3s 1.8s ease forwards;
+        }
+        ul{
+          padding: 0;
+          list-style: none;
+          display: inline-flex;
+          width: 30%;
+          justify-content: space-between;
+          li{
+            margin: 0 5px;
+            font-size: xx-large;
+          }
+        }
+      }
     }
+    .rounded-bckgd{
+      position: relative;
+      background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+      border-radius: 50%;
+      width: 450px;
+      height: 450px;
+      margin: auto;
+      transform: scale(1.5) translate(-50%, 0);
+      h1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        letter-spacing: 10px;
+        width: 100%;
+        text-align: center;
+        opacity : 1;
+      }
+    }
+    .rounded-bckgd.effect{
+      animation: loader 1.5s forwards;
+      h1{
+        transition: opacity 1s 0.5s ease-in-out;
+        opacity: 0;
+      }
+    }
+  }
 }
 
 
 //ANIMATIONS KEYFRAMES
-@keyframes revealRTL {
+@keyframes loader{
   0%{
-    width: 0;
-    right: 0;
+    transform: scale(1.5) translate(-50%, 0);
   }
-  65%{
-    width: 100%;
-    right: 0;
-  }
-  100% {
-    width: 0;
-    right: 100%;
-  }
-}
-
-@keyframes revealLTR {
-  0%{
-    width: 0;
-    left: 0;
-  }
-  65%{
-    width: 100%;
-    left: 0;
-  }
-  100% {
-    width: 0;
-    left: 100%;
+  100%{
+    transform: scale(1) translate(0, 0);
   }
 }
 

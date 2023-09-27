@@ -1,18 +1,49 @@
 @import './base.css';
-/* Darkmode Design */
+/********************** DarkMode Design **********************/
 .dark{
   color-scheme: dark;
   --color-background: #16171d; /* it's better to use a dark grey color instead of pure black */
   --color-heading: var(--vt-c-text-dark-1);
   --color-text: var(--vt-c-text-dark-2);
 }  
-.dark a, .dark .navbar .nav a, .dark .about-me .has-animation.animate-in h1, .dark .about-me .has-animation.animate-in p, .dark .card {
+
+.dark #app{
+  color: #adb5bd;
+}
+.dark #app h2::after{
+  border-bottom: 1px solid #adb5bd;
+}
+.dark button{
+  color: #adb5bd;
+}
+.dark #app .flip-card-front{
+  background: linear-gradient(120deg, lightgrey 26%, rgb(202 191 188 / 47%) 88%, #dee2e6 -57%, #474135 -52%, #ffecb3d9 31%, #6c757d42 125%);
+  color: white;
+}
+.dark #app .work .card{
+  filter: brightness(0.9);
+}
+.dark a, .dark .navbar .nav a{
   color: #adb5bd;
   background: none;
+}
+.dark .nav a::before, .dark button::before{
+  border-top: 2px solid #adb5bd;
+  border-right: 2px solid #adb5bd; 
+}
+.dark .nav a:after, .dark button::after{
+  border-bottom: 2px solid #adb5bd;
+  border-left: 2px solid #adb5bd;
+}
+.dark .mess-icon img{
+    background: linear-gradient(to bottom, #cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 20px;
 
 }
 
-/* Global Design */
+/********************** Global Design **********************/
 body{
   background: #00000003;
 }
@@ -21,24 +52,21 @@ body{
   margin: 0 auto;
   font-family: 'Noto Serif Display', serif;
 }
-
-h2{
-  text-align: center;
-  margin: 50px 0;
-  width: 100%;
-  transform: translateX(-1000px);
-  opacity: 0;
-  /* border-bottom: 1px black solid; */
+button:active{
+  border: none;
 }
-h2::after{
-  display: block;
-  content: "";
-  width: 100%;
-  padding: 15px 0;
-  border-bottom: 1px black solid;
+a{
+  color: #adb5bd;
 }
-h2.active{
-   animation: titleSlide 1.5s forwards;
+a:hover{
+  color: #adb5bd;
+  transition: 0.4s;
+}
+/* All icons in Gold */
+i{
+  background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Navbar Animations*/
@@ -86,15 +114,11 @@ h2.active{
 ul{
   list-style: none;
 }
+
 .card{
   background: none;
 }
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
+
 main{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -106,17 +130,17 @@ main{
 /* GLOBAL KEYFRAMES */
 @keyframes titleSlide{
   0%{
-      transform: translateX(-1000px);
+      transform: scale(0.5);
       opacity: 0;
   }
   100%{
-      transform: translateX(0);
+      transform: translate(0);
       opacity: 1;
   }
 }
 
 
-/* Responsive versions */
+
 @media (min-width: 1024px) {
   body {
     display: flex;

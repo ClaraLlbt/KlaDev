@@ -6,7 +6,7 @@ import { useDark } from "@vueuse/core";
 //import components
 import AboutMe from '../components/AboutMe.vue';
 import Navbar from '../components/Navbar.vue';
-import Skills from '../components/Skills.vue';
+import Skills from '../components/skills.vue';
 import Work from '../components/Work.vue';
 import Contact from '../components/Contact.vue';
 
@@ -16,11 +16,23 @@ export default {
   data(){
       return {
         dark: useDark(),
+        isLoading: true,
+        loadedElement : false,
       }
     },
   mounted(){
     darkMode()
     this.navbarLeft()
+
+    setTimeout(() => {
+      if(this.isLoading == true){
+          this.loadedElement = true
+        } else if(document.location = "#skills"){
+          this.loadedElement = true
+        }
+      }, 1300);
+
+    
   },
   methods: {
     navbarLeft(){
@@ -36,14 +48,16 @@ export default {
           el.classList.remove('active')
         }
       });
-    }
+    },
   }
 }
 </script>
 
 <template>
   
-  <nav>
+  <img class="bckgd-top" src="../assets/images/white-hewagone-form.png" alt="">
+
+  <nav class="menu">
     <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i></a>
@@ -71,21 +85,37 @@ export default {
   <Navbar />
 
   
-  <AboutMe />
+  <AboutMe v-model="isLoading"/>
 
-  <Skills />
+  <div v-show="this.loadedElement" ref="isLoading">
+  
+    <Skills/>
 
-  <Work />
+    <Work/>
 
-  <Contact />
-
-  <footer id="footer" class="container-fluid">
-          <p>Copyright©2023 KALADEV - <i class="bi bi-geo-alt-fill"></i> Boulogne-sur-Mer</p>
-      
+  <Contact/>
+  
+  
+  <footer  id="footer" class="container-fluid">
+    <p>Copyright©2023 KALADEV - <i class="bi bi-geo-alt-fill"></i> Boulogne-sur-Mer - <RouterLink to="/CGV">CGV</RouterLink></p> 
   </footer>
+  
+  </div>
+
+  
 </template>
 
 <style lang="scss" scoped>
+.bckgd-top{
+  position: absolute;
+  transform: rotate(180deg);
+  top: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 20%;
+  width: 50%;
+}
+
 nav{
   position: fixed;
   z-index: 1;

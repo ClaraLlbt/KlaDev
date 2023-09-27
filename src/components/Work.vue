@@ -29,9 +29,9 @@ export default {
 
 <template>
     <div id="work" class="work container">
-        <h2 class="h2-work">WORK</h2>
+        <h2 class="h2-work">•  WORK  •</h2>
         <div class="row">
-            <div class="col-6 cln-l">
+            <div class="col-sm-12 col-lg-6 cln cln-l">
             <div class="card">
                 <img class="" src="../assets/images/mockup-dito.png" alt="Card image cap">
                 <i class="bi bi-bookmark-star-fill" data-v-3309a9c7=""></i>
@@ -55,7 +55,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="col-6 cln-r">
+        <div class="col-sm-12 col-lg-6 cln cln-r">
             <div class="card">
                 <img class="" src="../assets/images/orinoco.png" alt="Card image cap">
                 <div class="card-body">
@@ -86,15 +86,31 @@ export default {
     .work{
         overflow: hidden;
         margin: 50px auto;
+        h2{
+            text-align: center;
+            margin: 50px 0;
+            width: 100%;
+            transform: translateX(-1000px);
+            opacity: 0;
+            letter-spacing: 15px;
+            /* border-bottom: 1px black solid; */
+        }
+        h2::after{
+            display: block;
+            content: "";
+            width: 100%;
+            padding: 15px 0;
+            border-bottom: 1px black solid;
+        }
+        h2.active{
+            animation: titleSlide 1s forwards;
+        }
         .card i{
             position: absolute;
             font-size: 60px;
             top: -17px;
-            left: -7px;
-            color: #c3f672;
-            &::before{
-                text-shadow: 1px 1px 2px black;;
-            }
+            left: -9px;
+            
         }
         .cln-l{
             transform: translateY(1000px);
@@ -102,7 +118,7 @@ export default {
             .card{ float: right; }
         }
         .cln-l.slidel{
-            animation: slideCards 1.5s 1.7s forwards;
+            animation: slideCards 1.3s 1.3s forwards;
         }
         .cln-r{
             transform: translateY(1000px);
@@ -110,7 +126,7 @@ export default {
             float: left;
         }
         .cln-r.slider{
-            animation: slideCards 1.5s 1.5s forwards;
+            animation: slideCards 1.3s 1.2s forwards;
         }
         .card{
             width: 80%;
