@@ -207,7 +207,7 @@ export default {
       h2{ 
         letter-spacing: 10px;
         width: 100%;
-        text-align: -webkit-center;
+        text-align: center;
         transform: translateY(295px);
         opacity: 0;
         margin: 20px auto;
@@ -216,7 +216,7 @@ export default {
           content: "";
           width: 30%;
           border-bottom: 1px solid black;
-          margin: 30px 0;
+          margin: 30px auto;
         }
       }
       h2.slide-top{

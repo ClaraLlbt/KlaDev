@@ -16,9 +16,8 @@
 .dark button{
   color: #adb5bd;
 }
-.dark #app .flip-card-front{
-  background: linear-gradient(120deg, lightgrey 26%, rgb(202 191 188 / 47%) 88%, #dee2e6 -57%, #474135 -52%, #ffecb3d9 31%, #6c757d42 125%);
-  color: white;
+.dark #app .flip-card-back{
+  color: black;
 }
 .dark #app .work .card{
   filter: brightness(0.9);

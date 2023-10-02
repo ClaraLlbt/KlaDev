@@ -82,13 +82,12 @@ export default {
           .flip-card .flip-card-inner .title{
             font-size: smaller;
           }
-          .flip-card .flip-card-inner span{
+          .flip-card .flip-card-inner .hexa-bckgd, .flip-card .flip-card-inner .hexa-shadow {
             font-size: 450px;
           }
           .flip-card-back span.ul{
             p{ 
               font-size: small;
-              padding: 0px 20px;
             }
           }
         }
@@ -101,6 +100,7 @@ export default {
         border-radius: 15px;
         min-height: 200px;
         justify-content: center;
+        background-color: white;
         .card-body{
           h3, p{ margin: 0;}
           h3{ font-size: large;}
@@ -131,6 +131,7 @@ export default {
               letter-spacing: 6px;
             }
           }
+          .row div{padding: 0;}
           form{
             border-radius: 15px;
             padding: 15px;

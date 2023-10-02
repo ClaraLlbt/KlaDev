@@ -106,12 +106,12 @@ export default {
                         <p>Vous avez le projet de développer un site web ? vous souhaitez un devis ? Je serai ravie d'en discuter avec vous</p>
                     </span>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
                             <label for="name" class="form-label">Prénom:</label>
                             <input  v-model="name" type="name" class="form-control" id="name" name="name" placeholder="Votre prénom" aria-describedby="emailHelp" required> 
                         </div>
                         
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
                             <label for="lastname" class="form-label">Nom:</label>
                         <input  v-model="lastname" type="lastname" class="form-control" id="lastname" name="lastname" placeholder="Votre Nom" aria-describedby="emailHelp" required>
                         </div>
@@ -145,7 +145,7 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .contact{
     position: relative;
     .contact-row{

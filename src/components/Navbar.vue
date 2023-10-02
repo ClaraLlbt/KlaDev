@@ -10,7 +10,8 @@ export default {
         mobileFormat : false,
       }
     },
-    created(){
+    mounted(){
+      this.navHidden()
       if (window.matchMedia("(max-width: 768px)").matches) {
                 /* La largeur minimum de l'affichage est 600 px inclus */
                 console.log("format mobile detecté")
@@ -24,10 +25,12 @@ export default {
     methods: {
       navHidden(){
         const el = document.querySelector('.contact')
+        console.log(el);
         const mobileNav =  document.getElementsByClassName('navbar-mobile')
         document.addEventListener('scroll', () => { 
             const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
-            const topElementToTopViewport = el.getBoundingClientRect().top
+            const topElementToTopViewport = el.getBoundingClientRect(scrollHeight).top
+
 
             if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.10){
               mobileNav[0].classList.add('hiden')
@@ -62,8 +65,8 @@ export default {
 
             <li class="nav-item item-dark">
                 <button id="darkModeButton" type="button" role="button" class="btn btn-effect" aria-label="Bouton pour basculer en mode sombre">
-                    <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                    <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
+                    <i  v-if="this.dark == false" class="bi bi-moon icon-moon"></i>
+                    <i  v-else-if="this.dark == true" class="bi bi-brightness-high icon-light"></i>
                 </button>
             </li>
         </ul>
