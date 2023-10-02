@@ -36,7 +36,7 @@ export default {
                     <h2>1. Préambule</h2>
                     <p>Les présentes Conditions Générales de Prestation de Services (ci-après dénommées les "Conditions") 
                         régissent les relations contractuelles entre Kaladev, auto-entrepreneur immatriculé(e) sous le numéro 
-                        [votre numéro d'immatriculation], dont le siège social est situé au 92 Rue Saint-Louis, à Boulogne-sur-Mer, 
+                        98003307000015 dont le siège social est situé au 92 Rue Saint-Louis, à Boulogne-sur-Mer, 
                         et toute personne physique ou morale (ci-après dénommée le "Client") souhaitant bénéficier des services de 
                         développement web proposés par Clara Laliberté (ci-après dénommé le "Développeur").</p>
 
@@ -84,8 +84,8 @@ export default {
                     <p>Le Développeur se réserve le droit de modifier les présentes Conditions à tout moment. Les modifications seront 
                         communiquées au Client et entreront en vigueur après notification.</p>
                     <p>En acceptant ces Conditions, le Client reconnaît avoir lu, compris et accepté l'ensemble des termes et conditions énoncés.</p>
-                    <p>Fait à [lieu], le [date].</p>
-                    <p>[Votre nom ou nom de votre entreprise]</p>
+                    <p>Fait à Boulogne-sur-Mer, le 01/10/2023.</p>
+                    <p>Kala DEV</p>
                     <p>Auto-entrepreneur</p>
 
                 </span>

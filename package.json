@@ -2,7 +2,7 @@
   "name": "kladev",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://github.com/KlaDev ",
+  "homepage": "https://clarallbt.github.io/KlaDev/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

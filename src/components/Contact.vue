@@ -4,6 +4,9 @@ export default {
     name: "Contact",
     data(){
         return{
+            name: '',
+            lastname: '',
+            phone: '',
             email: '',
             message: '',
         }
@@ -41,11 +44,14 @@ export default {
             const userId = 'OkYb3_3x2XbgyN8aT';
    
             emailjs.sendForm(serviceID, templateID, this ,userId, {
+                    name: this.name,
+                    lastame: this.lastname,
+                    phone: this.phone,
                     email: this.email,
                     message: this.message
                 }) .then((res) => {
                     btn.innerText = 'Email Envoyé';
-                    document.location.href = "/";
+                    document.location.href = "/KlaDev/";
                 })
                 .catch ((err) => {
                     btn.innerText = 'Une erreur est survenue';
@@ -59,25 +65,32 @@ export default {
 <template>
     <div id="contact" class="contact container-fluid">
         
-        <div class="row">
+        <div class="row contact-row">
             <div class="col-lg-4 col-sm-12 contact-card">
                 <div class="card">
-                    <!-- <p class="goodbye">AUREVOIR !</p> -->
-                    <div class="icons-contact">
-                        <div class="col-12 icon">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <p>Boulogne-Sur-Mer</p>
-                        </div>
+                    <div class="card-title"><p>Merci de votre visite !</p></div>
+                    <div class="card-body icons-contact">
                         <div class="col-12 icon">
                             <i class="bi bi-phone-fill"></i>
                             <p>06 19 04 06 19</p>
                         </div>
+                        <div class="col-12 icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <p>Boulogne-Sur-Mer</p>
+                        </div>
                     </div>
-                <div>
+                    <div class="card-footer networks-link">
+                        <ul>
+                            <li><a href="https://linkedin.com/in/cllbt"><i class="bi bi-linkedin"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100069904156077"><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/kala__dev/"><i class="bi bi-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                <!-- <div>
                     <a href="/Clarallbt/lib/web/CV_LALIBERTE_CLARA.pdf" download="">
                         <button type="button" class="btn cv-btn"><i class="bi bi-file-pdf"></i> Télécharger mon CV</button>
                     </a>
-                </div>
+                </div> -->
                     
                 </div>
             </div>
@@ -92,9 +105,24 @@ export default {
                     <span>
                         <p>Vous avez le projet de développer un site web ? vous souhaitez un devis ? Je serai ravie d'en discuter avec vous</p>
                     </span>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="name" class="form-label">Prénom:</label>
+                            <input  v-model="name" type="name" class="form-control" id="name" name="name" placeholder="Votre prénom" aria-describedby="emailHelp" required> 
+                        </div>
+                        
+                        <div class="col-6">
+                            <label for="lastname" class="form-label">Nom:</label>
+                        <input  v-model="lastname" type="lastname" class="form-control" id="lastname" name="lastname" placeholder="Votre Nom" aria-describedby="emailHelp" required>
+                        </div>
+                    </div>
                     <div>
                         <label for="reply_to" class="form-label">Email:</label>
                         <input  v-model="email" type="email" class="form-control" id="reply_to" name="reply_to" placeholder="Laissez moi votre Email" aria-describedby="emailHelp" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="form-label">Numéro de téléphone:</label>
+                        <input  v-model="phone" type="phone" class="form-control" id="phone" name="phone" placeholder="Laissez moi votre numéro de téléphone" required>
                     </div>
                     <div>
                         <label for="message" class="form-label">Votre message:</label>
@@ -102,11 +130,13 @@ export default {
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" name="acceptance-41" value="1" aria-invalid="false" required>
-                        <p>En soumettant ce formulaire, j'accepte que mes données personnelles soient utilisées pour me recontacter. Aucun autre traitement ne sera effectué avec mes informations. Pour connaître et exercer vos droits, veuillez consultez la Politique de confidentialité.</p>
+                        <p>En soumettant ce formulaire, j'accepte que mes données personnelles soient utilisées pour me recontacter. 
+                            Aucun autre traitement ne sera effectué avec mes informations. Pour connaître et exercer vos droits, 
+                            veuillez consultez <RouterLink to="/Politiquedeconfidentialité">la politique de confidentialité</RouterLink></p>
                     </div>
 
                     <div class="button" >
-                        <button id="sendBtn" @click="sendEmail()" type="submit" value="Send Email" class="btn">Envoyer</button>
+                        <button id="sendBtn" @click="sendEmail()" type="submit" value="Send Email" class="btn btn-effect">Envoyer</button>
                     </div>
                 </form>
             </div>
@@ -118,7 +148,7 @@ export default {
 <style lang="scss" scoped>
 .contact{
     position: relative;
-    .row{
+    .contact-row{
         height: 700px;
         position: relative;
         margin: 60px;
@@ -129,29 +159,34 @@ export default {
         .contact-card{
             .card{
                 width: 60%;
-                height: 400px;
-                padding: 30px;
                 margin: auto;
                 opacity: 0;
-                border: 3px inset white;
+                border: 1.5px inset white;
                 background: #e8e8e8;
                 box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff; 
                 transition: transform .5s ease-in-out;
-                border-radius: 1.5rem;
-                display: flex; 
-                justify-content: center;
-                align-items: center;
-                font-weight: bolder; 
-                color: #8a8989;
+                border-radius: 16px;
+                font-weight: bolder;
                 box-shadow: 5px 4px 12px 0px white;
+                .card-title{
+                    text-align: center;
+                    padding: 10px;
+                    p{ font-size: x-large;}
+                }
 
-                .icons-contact{
-                    place-self: center;
+                .card-body{
                     .icon{
                         text-align: center;
                         i{
                         font-size: 35px;                    }
                     }
+                }
+                .card-footer ul{
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: space-evenly;
+                    li{font-size: 25px;}
                 }
                 p{
                     font-size: 20px;

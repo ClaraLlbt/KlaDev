@@ -33,9 +33,9 @@ export default {
         </div>
         <div class="networks-link">
           <ul>
-            <li><a href=""><i class="bi bi-linkedin"></i></a></li>
-            <li><a href=""><i class="bi bi-facebook"></i></a></li>
-            <li><a href=""><i class="bi bi-instagram"></i></a></li>
+            <li><a href="https://linkedin.com/in/cllbt"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100069904156077"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/kala__dev/"><i class="bi bi-instagram"></i></a></li>
           </ul>
         </div>
       </div>

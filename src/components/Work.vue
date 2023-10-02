@@ -34,24 +34,33 @@ export default {
             <div class="col-sm-12 col-lg-6 cln cln-l">
             <div class="card">
                 <img class="" src="../assets/images/mockup-dito.png" alt="Card image cap">
-                <i class="bi bi-bookmark-star-fill" data-v-3309a9c7=""></i>
+                <i id="headlining" class="bi bi-bookmark-star-fill" data-v-3309a9c7=""></i>
                 <div class="card-body">
                     <h3>DITO PRO</h3>
-                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                    <p>Réalisation d'un site vitrine de dépannage informatique pour l'entreprise DITO-PRO et déploiement du site sur OVHCloud</p>
+                    <div class="card-footer">
+                        <button class="btn"><a href="https://dito-pro.fr/">Découvrir <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <img class="" src="../assets/images/groupo.png" alt="Card image cap">
                 <div class="card-body">
                     <h3>GROUPOMANIA</h3>
-                    <p>Réalisation d'un réseau social d'entreprise</p>
+                    <p>Réalisation d'un réseau social d'entreprise et d'une base de données SQL</p>
+                    <div class="card-footer">
+                        <button class="btn"><a href="https://clarallbt.github.io/GrpMVP2.0/">Découvrir <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <img class="" src="../assets/images/piiquante.png" alt="Card image cap">
                 <div class="card-body">
                     <h3>PIIQUANTE</h3>
-                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                    <p>Développement d'une API sécurisée pour une application d'avis gastronomiques</p>
+                    <div class="card-footer">
+                        <button class="btn"><a href="https://clarallbt.github.io/PIIQUANTE/">Découvrir <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,21 +69,30 @@ export default {
                 <img class="" src="../assets/images/orinoco.png" alt="Card image cap">
                 <div class="card-body">
                     <h3>ORINOCO</h3>
-                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                    <p>Construire un site e-commerce pour la vente d'appareils photos</p>
+                    <div class="card-footer">
+                        <button class="btn"><a href="https://clarallbt.github.io/Orinoco/">Découvrir <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <img class="" src="../assets/images/OhMyFood.png" alt="Card image cap">
                 <div class="card-body">
                     <h3>OH MY FOOD</h3>
-                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                    <p>Intégrer du contenu conformément à une maquette en mettant en oeuvre des effets CSS graphiques avancés</p>
+                    <div class="card-footer">
+                        <button class="btn"><a href="https://clarallbt.github.io/OhMyFood---OC-/">Découvrir <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <img class="" src="../assets/images/mockup_reservia.png" alt="Card image cap">
                 <div class="card-body">
                     <h3>RESERVIA</h3>
-                    <p>Réalisation d'un site vitrine de dépannage informatique</p>
+                    <p>Création d'une page d'accueil responsive pour une agence de voyage en intégrant du contenu conformément à une maquette</p>
+                    <div class="card-footer">
+                        <button class="btn"><a href="https://clarallbt.github.io/Reservia---OC-/">Découvrir <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,7 +100,7 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .work{
         overflow: hidden;
         margin: 50px auto;
@@ -105,13 +123,7 @@ export default {
         h2.active{
             animation: titleSlide 1s forwards;
         }
-        .card i{
-            position: absolute;
-            font-size: 60px;
-            top: -17px;
-            left: -9px;
-            
-        }
+        // Cards Effects
         .cln-l{
             transform: translateY(1000px);
             opacity: 0;
@@ -128,6 +140,14 @@ export default {
         .cln-r.slider{
             animation: slideCards 1.3s 1.2s forwards;
         }
+        //Cards Design
+        .card #headlining{
+            position: absolute;
+            font-size: 60px;
+            top: -17px;
+            left: -9px;
+            
+        }
         .card{
             width: 80%;
             margin: 10px 0;
@@ -139,8 +159,35 @@ export default {
                 opacity: 0;
                 z-index: 2;
                 transform: translateY(50px);
+                p{
+                    font-size: 17px;
+                }
+                .card-footer{
+                    padding-left: 0;
+                    .btn{
+                        padding-left: 0;
+                        font-size: x-large;
+                        a{
+                            background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            font-weight: bolder;
+                            i{
+                            font-size: 20px;
+                            }
+                            &:focus{
+                            border: none;
+                        }
+                        &:focus, &:active{
+                            border-color: none; 
+                        }
+                        }
+                        
+                    }
+                }
             }
             &:hover{
+                img{filter: blur(2px);}
                 .card-body{
                     transform: translateY(0px);
                     transition: transform 1.2s ease, opacity 1.4s ease;
@@ -155,7 +202,7 @@ export default {
                 z-index: 1;
                 inset: 0px;
                 opacity: 0.8;
-                background: linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 80%);
+                background: linear-gradient(rgba(0, 0, 0, 0.1) -10%,rgb(0 0 0 / 92%) 80%);
             }
         }
     }

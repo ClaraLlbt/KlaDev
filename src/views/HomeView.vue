@@ -60,22 +60,22 @@ export default {
   <nav class="menu">
     <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i></a>
+                <a aria-current="page" href="#" aria-label="Home"><i class="bi bi-house-door-fill"></i><i class="bi bi-house-door-fill" id="icon-shadow"></i></a>
             </li>
             <li class="nav-item">
-                <a class="" href="#skills"><i class="bi bi-gear"></i></a>
+                <a href="#skills" aria-label="Skills"><i class="bi bi-gear"></i><i class="bi bi-gear" id="icon-shadow"></i></a>
             </li>
             <li class="nav-item">
-                <a class="" href="#work"><i class="bi bi-code-slash"></i></a>
+                <a href="#work" aria-label="Works"><i class="bi bi-code-slash"></i><i class="bi bi-code-slash" id="icon-shadow"></i></a>
             </li>
             <li class="nav-item">
-                <a class="" href="#contact"><i class="bi bi-envelope-at-fill"></i></a>
+                <a href="#contact" aria-label="Contact"><i class="bi bi-envelope-at-fill"></i><i class="bi bi-envelope-at-fill" id="icon-shadow"></i></a>
             </li>
 
-            <li class="nav-item item-dark">
+            <li class="nav-item item-dark" aria-label="Mode sombre">
                 <button id="darkModeButton" type="button" role="button" class="btn" aria-label="Bouton pour basculer en mode sombre">
-                    <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                    <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
+                    <div v-if="this.dark == false" class="i-area" aria-label="Mode sombre"><i class="bi bi-moon icon-moon"></i><i class="bi bi-moon icon-moon" id="icon-shadow"></i></div>
+                    <div  v-else-if="this.dark == true" class="i-area" aria-label="Mode clair"><i class="bi bi-brightness-high icon-light"></i><i class="bi bi-brightness-high icon-light" id="icon-shadow"></i></div>
                 </button>
             </li>
         </ul>
@@ -97,7 +97,7 @@ export default {
   
   
   <footer  id="footer" class="container-fluid">
-    <p>Copyright©2023 KALADEV - <i class="bi bi-geo-alt-fill"></i> Boulogne-sur-Mer - <RouterLink to="/CGV">CGV</RouterLink></p> 
+    <p>Copyright©2023 KALADEV - <i class="bi bi-geo-alt-fill"></i> Boulogne-sur-Mer - <RouterLink to="/CGV">CGV</RouterLink> - <RouterLink to="/MentionsLégales">Mentions légales</RouterLink></p> 
   </footer>
   
   </div>
@@ -134,6 +134,8 @@ nav{
         align-items: center;
         justify-content: center;
         margin: 10px 3px;
+        a{ position: relative; 
+        }
         a i{
           font-size: 25px;
           color: #E8E8E8;
@@ -141,9 +143,43 @@ nav{
             color: grey;
           }
         }
+        i#icon-shadow{
+          -webkit-text-fill-color: transparent;
+          background: none;
+          text-shadow: 0.5px 0.4px #6f6f6f;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
+        a:hover::before, .i-area:hover::before{
+          content: attr(aria-label);
+          position: absolute;
+          white-space: nowrap;
+          z-index: 1;
+          transform: translate(75%, 100%);
+          padding: 1px 5px;
+          background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+          color: white;
+          text-shadow: 1px 1px 4px grey;
+          letter-spacing: 1px;
+          opacity: 60%;
+          border: none;
+          border-radius: 2px;
+        }
+        .i-area:hover::before{
+          transform: translate(40%, 40%);
+        }
       }
       li.item-dark{
-        button i{ color: grey;}
+        button {
+          .i-area{
+            position: relative;
+          }
+          i{ 
+          color: grey;
+        }
+      }
       }
     }   
 }

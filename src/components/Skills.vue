@@ -3,6 +3,7 @@ export default {
     name: 'Skills',
     mounted(){ 
       this.skillsAnimations();
+      
     },
     methods: {
     skillsAnimations(){
@@ -34,7 +35,8 @@ export default {
           ftdCard.classList.add('active')
         }
       })
-    }
+    },
+    
   }
 }
 </script>
@@ -57,12 +59,15 @@ export default {
       
       <div class="row skills-ctr">
         <!-- BACKEND COLUMN -->
-        <div class="col-sm-12 col-lg-4 cln">
-          <div class="flip-card bkd-card">
+        <div class="col-sm-12 col-lg-4 cln cln-hexa">
+          
+          <div class="flip-card hexagon bkd-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
+                <span class="material-symbols-outlined hexa-bckgd">hexagon</span>
+                <span class="material-symbols-outlined hexa-shadow">hexagon</span>
                 <p class="title">• Back-end •</p>
-                <span>
+                <span class="ul">
                   <ul>
                     <li>
                       <img src="../assets/images/nodejs.png" alt="">
@@ -74,12 +79,12 @@ export default {
                     </li>
                   </ul>
                 </span>
-                
-                <p>Hover Me</p>
+            
               </div>
               <div class="flip-card-back">
-                <div class="bckgd-back"></div>
-                <span>
+                <span class="material-symbols-outlined hexa-bckgd">hexagon</span>
+                <span class="material-symbols-outlined hexa-shadow">hexagon</span>
+                <span class="ul">
                   <p>» API et Services web sécurisés: Autorisation/Authentification</p>
                   <p>» Test d'applications / Création et gestion d'événements Javascript</p>
                   <p>» Performance et optimisation</p>
@@ -92,11 +97,14 @@ export default {
         </div>
         <!-- DATABASES COLUMN -->
         <div class="col-sm-12 col-lg-4 cln">
-          <div class="flip-card db-card">
+          <div class="flip-card hexagon db-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
+                <span class="material-symbols-outlined hexa-bckgd">hexagon</span>
+                <span class="material-symbols-outlined hexa-shadow">hexagon</span>
+
                 <p class="title">• Databases •</p>
-                <span>
+                <span class="ul">
                   <ul>
                     <li>
                       <img src="../assets/images/mysql.png" alt="">
@@ -109,22 +117,31 @@ export default {
                   </ul>
                 </span>
                 
-                <p>Hover Me</p>
               </div>
               <div class="flip-card-back">
-                <div class="bckgd-back"></div>
-                <span>
-                  <p>» Création et intégration de bases de données CLOUD et SQL</p>
+                <span class="material-symbols-outlined hexa-bckgd">hexagon</span>
+                <span class="material-symbols-outlined hexa-shadow">hexagon</span>
+                <span class="ul">
+                  <p>» Maîtrise du langage SQL</p>
+                  <p>» Implémentation d'un stockage de données sécurisé</p>
+                  <p>» Gestion des bases données</p>
+                  <p>» Migration de données</p>
+                  <p>» Authentifier un utilisateur et maintenir une session </p>
+                  <p>» Utilisation de services cloud MongoDB</p>
+                  
                 </span>
               </div>
             </div>
           </div>
         </div>
         <!-- FRONTEND COLUMN -->
-        <div class="col-sm-12 col-lg-4 cln"> 
-          <div class="flip-card ftd-card">
+        <div class="col-sm-12 col-lg-4 cln">
+
+          <div class="flip-card hexagon ftd-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
+                <span class="material-symbols-outlined hexa-bckgd">hexagon</span>
+                <span class="material-symbols-outlined hexa-shadow">hexagon</span>
                 <p class="title">• Front-end •</p>
                 <span class="ul">
                   <ul>
@@ -158,13 +175,16 @@ export default {
                     </span>
                   </ul>
                 </span>
-                <p>Hover Me</p>
               </div>
               <div class="flip-card-back">
-                <div class="bckgd-back"></div>
+                <span class="material-symbols-outlined hexa-bckgd">hexagon</span>
+                <span class="material-symbols-outlined hexa-shadow">hexagon</span>
                 <span class="ul">
-                  <p>» Implémentation d'interfaces responsives en suivant une charte graphique et en intégrant du contenu conformément à une maquette</p>
-                  <p>» Utiliser de bonnes pratiques de développement pour assurer l'accessibilité d'un site</p>
+                  <p>» Intégration de maquettes : convertir des maquettes de conception (conçues par des graphistes) en code HTML/CSS</p>
+                  <p>» Accessibilité : Compréhension des normes d'accessibilité web</p>
+                  <p>» Interaction avec des API RESTful pour récupérer des données à afficher dans l'interface utilisateur.</p>
+                  <p>» Test et débogage</p>
+                  <p>» Gestion de projet et documentation</p>
                   <p>» Utilisation de plusieurs Frameworks: AngularJs, VueJs, ...</p>
                 </span>
               </div>
@@ -177,6 +197,7 @@ export default {
 </template>
 
 <style lang="scss">
+
 .skills{
   justify-items: center;
   .diploma-ctr{
@@ -236,97 +257,118 @@ export default {
       }
     }
   }
-  
   .skills-ctr{
     align-items: flex-end;
-    height: 450px;
     .cln{
-      .flip-card {
+      height: 530px;
+      display: flex;
+      align-items: flex-end;
+      .flip-card.hexagon{
         background-color: transparent;
-        width: 75%;
-        height: 0px;
-        perspective: 1000px;
-        margin: auto;
-        .flip-card-inner {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          text-align: center;
-          transition: transform 0.8s;
-          transform-style: preserve-3d;
-          .title {
-            font-size: 1.5em;
-            font-weight: 900;
-            text-align: center;
-            margin: 15px auto;
-            letter-spacing: 10px;
-          }
-        }
-      }
-      .flip-card.active{
-        height: 400px;
-        transition: all 1.3s ease-in-out;
-        .flip-card-inner .title, span, p{
-          opacity: 1;
-          transition: opacity 1s 2s;
-        }
-      }
-      .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-      .flip-card-front, .flip-card-back {
-        box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         width: 100%;
-        height: 100%;
+        height: 0%;
+        perspective: 1000px;
         -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border: 3px inset white;
-        border-radius: 1rem;
-      }
-      .flip-card-front {
-        background: linear-gradient(120deg, #F3F3F3 60%, rgba(202, 191, 188, 0.13) 88%,
-        #cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
-        .title, span, p{
-          opacity: 0;
-        }
-        span{
-          height: 80%;
-          display: grid;
-          ul{
-            height: 100%;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        transition:transform 0.5s;
+        overflow: hidden;
+        .flip-card-inner{
+          height: 100%;
+          transition: transform 0.8s; 
+          transform-style: preserve-3d;
+          .flip-card-front, .flip-card-back{
             display: flex;
-            text-align: center;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            padding: 0;
-            li{
-              img{ width: 50%;}
+            align-items: center;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            .hexa-bckgd{
+              position: absolute;
+              top: 0%;
+              font-size: 530px;
+              transform: rotateZ(90deg);
+              z-index: -1;
+            }
+            .hexa-shadow{
+              color: transparent;
+              z-index: -2;
+              font-size: 530px;
+              position: absolute;
+              transform: rotateZ(90deg);
+              text-shadow: 3px -3px 7px grey;
+              opacity: 0;
+            }
+          }
+          .flip-card-front{
+            .hexa-bckgd{
+              background: linear-gradient(132deg, rgba(226,226,226,1) 0%, rgba(248,248,248,1) 52%, rgba(226,226,226,1) 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            .title, span.ul{ opacity: 0;}
+            .title{
+              font-size: 1.5em;
+              font-weight: 900;
+              text-align: center;
+              letter-spacing: 10px;
+            }
+            span.ul{
+              width: 100%;
+              ul{
+                width: 80%;
+                margin: auto;
+                padding: 0;
+                justify-content: center;
+                span{
+                  display: flex;
+                }
+                li{
+                  margin: auto;
+                  width: 80px;
+                  height: 80px;
+                  text-align: center;
+                  img{ width: 60%;}
+                }
+                
+              }
+            }
+          }
+          .flip-card-back{
+            transform: rotateY(180deg);
+            .hexa-bckgd{
+              background: linear-gradient(120deg,#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            span.ul{
+              width: 75%;
+              p{
+                margin-bottom: 0px;
+                text-align: justify;
+              }
             }
           }
         }
       }
-      .flip-card-back {
-        text-shadow: 1px 1px 4px grey;
-        transform: rotateY(180deg);
-        .bckgd-back{
-          height: 100%;
-          width: 100%;
-          position: absolute;
-          top: 0;
-          background: linear-gradient(120deg, #cfc09f -80%, #634F30 -22%, #cfc09f -13%, #ffecb3 38%,#bcac7ac9 74%, #aa9975c2 88%,#E8E8E8 44%);
-          opacity: 50%;
-          z-index: -1;
+      .flip-card.hexagon:hover .flip-card-inner{
+          transform: rotateY(180deg);
         }
-        span{
-          text-align: start;
-          padding: 0 30px;
-          p{
-            margin-bottom: 5px;
-            text-align: justify;
+      .flip-card.hexagon.active{
+        height: 100%;
+        transition: all 1.3s ease-in-out;
+        .flip-card-inner{
+          .hexa-shadow{
+            opacity: 1;
+            transition: opacity 0.5s 1.2s;
+          }
+          .title, span.ul{
+            opacity: 1;
+            transition: opacity 1s 2s;
           }
         }
       }

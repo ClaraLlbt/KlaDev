@@ -1,6 +1,6 @@
 <script>
 //import darkMode
-import { useDark } from "@vueuse/core";
+import { useDark, useToggle } from "@vueuse/core";
 
 export default {
     name: "Navbar",
@@ -10,13 +10,12 @@ export default {
         mobileFormat : false,
       }
     },
-    mounted(){
-      this.navHidden()
-
+    created(){
       if (window.matchMedia("(max-width: 768px)").matches) {
                 /* La largeur minimum de l'affichage est 600 px inclus */
                 console.log("format mobile detecté")
                 this.mobileFormat = true
+                this.navHidden();
             } else {
                 console.log("format mobile non detecté")
                 /* L'affichage est inférieur à 600px de large */
@@ -26,7 +25,6 @@ export default {
       navHidden(){
         const el = document.querySelector('.contact')
         const mobileNav =  document.getElementsByClassName('navbar-mobile')
-        console.log(mobileNav);
         document.addEventListener('scroll', () => { 
             const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
             const topElementToTopViewport = el.getBoundingClientRect().top
@@ -46,6 +44,7 @@ export default {
 </script>
 
 <template>
+  <!-- IF MOBILE FORMAT IS NOT DETECTED, SHOW THIS NAV -->
     <div v-if="mobileFormat == false" class="container navbar">
         <ul class="nav justify-content-center">
             <li class="nav-item">
@@ -62,7 +61,7 @@ export default {
             </li>
 
             <li class="nav-item item-dark">
-                <button id="darkModeButton" type="button" role="button" class="btn" aria-label="Bouton pour basculer en mode sombre">
+                <button id="darkModeButton" type="button" role="button" class="btn btn-effect" aria-label="Bouton pour basculer en mode sombre">
                     <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
                     <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
                 </button>
@@ -70,7 +69,7 @@ export default {
         </ul>
     </div>
 
-
+    <!-- IF MOBILE FORMAT IS DETECTED, SHOW THIS MOBILE NAV -->
     <div id="navbar-mobile" v-else-if="mobileFormat == true" class="container navbar navbar-mobile">
       <ul class="nav justify-content-center">
             <li class="nav-item mobile-item">
@@ -86,11 +85,11 @@ export default {
                 <a class="nav-link" href="#contact"><i class="bi bi-envelope-at-fill"></i></a>
             </li>
 
-            <li class="nav-item mobile-item item-dark">
-                <button id="darkModeButton" type="button" role="button" class="btn" aria-label="Bouton pour basculer en mode sombre">
-                    <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                    <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
-                </button>
+            <li class="nav-item item-dark mobile-item">
+              <button id="dkMobile" type="button" role="button" class="btn btn-effect" aria-label="Bouton pour basculer en mode sombre">
+                <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
+                <i class="bi bi-brightness-high icon-light" v-else-if="this.darl == true"></i>
+              </button>
             </li>
         </ul></div>
 </template>
@@ -117,14 +116,20 @@ export default {
 }
 @media screen and (max-width: 767px) {
 .navbar-mobile{
-      position: fixed;
-      bottom: 0;
-      z-index: 1;
-      transform: translateY(100px);
-      animation: deployeMobileNav 1.5s 1s forwards;
-      box-shadow: inset -1px -4px 20px lightgray;
-      background-color: white;
-      .nav-item.mobile-item{ margin: 0.5em auto;}
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  transform: translateY(100px);
+  animation: deployeMobileNav 1.5s 1s forwards;
+  box-shadow: inset -1px -4px 20px lightgray;
+  background-color: white;
+  .nav .nav-item.mobile-item{ 
+    margin: auto;
+    a{
+      padding: 0;
+    }
+  }
+  
 }
 .navbar-mobile.hiden{
   transform: translateY(0);

@@ -1,4 +1,3 @@
-// utils.js
 
 //Darkmode FUNCTION
 import { useDark, useToggle } from "@vueuse/core";
@@ -10,6 +9,8 @@ export function darkMode() {
    
     const btnDkMod = document.querySelectorAll('.item-dark')
     
+    console.log(btnDkMod);
+    
     btnDkMod[0].addEventListener('click', function(){   
         toggleDark()
     })
@@ -17,6 +18,7 @@ export function darkMode() {
         toggleDark()
     })
 }
+
 
 export function darkModeCgv() {
     // Fonction à partager

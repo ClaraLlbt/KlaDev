@@ -16,9 +16,25 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/CGView.vue')
+    },
+    {
+      path: '/MentionsLégales',
+      name: 'MentionsLégales',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/MLViews.vue')
+    },
+    {
+      path: '/Politiquedeconfidentialité',
+      name: 'PC',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/PcViews.vue')
     }
   ],
-  base: 'https://github.com/ClaraLlbt/KlaDev.git'
+  base: 'https://clarallbt.github.io/KlaDev/'
 })
 
 export default router

@@ -23,15 +23,15 @@
 .dark #app .work .card{
   filter: brightness(0.9);
 }
-.dark a, .dark .navbar .nav a{
+.dark li a, .dark .navbar .nav li a{
   color: #adb5bd;
   background: none;
 }
-.dark .nav a::before, .dark button::before{
+.dark .nav li::before, .dark .btn-effect::before{
   border-top: 2px solid #adb5bd;
   border-right: 2px solid #adb5bd; 
 }
-.dark .nav a:after, .dark button::after{
+.dark .nav li:after, .dark .btn-effect::after{
   border-bottom: 2px solid #adb5bd;
   border-left: 2px solid #adb5bd;
 }
@@ -74,14 +74,16 @@ i{
   box-sizing: border-box;
   transition: all .35s ease;
 }
-.nav a, button {
-  padding: .5em .8em;
+.nav li, button {
   color: black;
   position: relative;
   text-decoration: none;
 }
-.nav a:hover{ color: black;}
-.nav a::before,.nav a::after, button::before, button::after {
+.nav li a{
+  color: black;
+}
+.nav li a:hover{ color: black;}
+.nav li::before,.nav li::after, .btn-effect::before, .btn-effect::after {
   content: '';
   height: 14px;
   width: 14px;
@@ -89,7 +91,7 @@ i{
   transition: all .35s ease;
   opacity: 0;
 }
-.nav a::before, button::before {
+.nav li::before, .btn-effect::before {
   content: '';
   right: 0;
   top: 0;
@@ -97,7 +99,7 @@ i{
   border-right: 2px solid black;
   transform: translate(-100%, 50%);
 }
-.nav a:after, button::after {
+.nav li:after, .btn-effect::after {
   content: '';
   left: 0;
   bottom: 0;
@@ -106,7 +108,7 @@ i{
   transform: translate(100%, -50%)
 }
 
-.nav a:hover:before,.nav a:hover:after, button:hover::before, button:hover::after {
+.nav li:hover:before,.nav li:hover:after, .btn-effect:hover::before, .btn-effect:hover::after {
   transform: translate(0,0);
   opacity: 1;
 }
