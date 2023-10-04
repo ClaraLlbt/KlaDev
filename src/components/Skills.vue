@@ -18,7 +18,7 @@ export default {
       const bkdCard = document.querySelector('.bkd-card')
       const dbCard = document.querySelector('.db-card')
       const ftdCard = document.querySelector('.ftd-card')
-      console.log(h2[0]);
+    
       document.addEventListener('scroll', () => { 
         const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
         const topElementToTopViewport = el.getBoundingClientRect().top
@@ -305,8 +305,14 @@ export default {
             }
           }
           .flip-card-front{
-            .hexa-bckgd{
+            z-index: 1;
+            span.material-symbols-outlined.hexa-bckgd::before{
+              content: 'hexagon';
+              position: absolute;
+              width: 100%;
+              height: 100%;
               background: linear-gradient(132deg, rgba(226,226,226,1) 0%, rgba(248,248,248,1) 52%, rgba(226,226,226,1) 100%);
+              background-clip: text;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             }
@@ -339,17 +345,25 @@ export default {
             }
           }
           .flip-card-back{
+            z-index: 2;
             transform: rotateY(180deg);
-            .hexa-bckgd{
+            span.material-symbols-outlined.hexa-bckgd::before{
+              content: 'hexagon';
+              position: absolute;
+              width: 100%;
+              height: 100%;
               background: linear-gradient(120deg,#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+              background-clip: text;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             }
             span.ul{
-              width: 75%;
+              width: 80%;
+              height: 45%;
               p{
                 margin-bottom: 0px;
-                text-align: justify;
+                text-align: center;
+                font-weight: 700;
               }
             }
           }

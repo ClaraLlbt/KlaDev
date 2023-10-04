@@ -15,7 +15,7 @@ export default {
 //Responsive Versions 
 
 //MOBILE
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   /* Styles pour les smartphones en mode portrait */
   #app{
     height: 100%;
@@ -86,8 +86,9 @@ export default {
             font-size: 450px;
           }
           .flip-card-back span.ul{
+            width: 90%;
             p{ 
-              font-size: small;
+              font-size: 12px;
             }
           }
         }
@@ -150,18 +151,21 @@ export default {
     }
   }
   #app{
-  .CGV{
+  .CGV, .ML, .PC{
     .row{ padding: 20px;}
-    .buttons{
-      position: inherit;
-    }
     .title-cln{
+      padding: 0;
       h1{
         letter-spacing: 8px;
+        font-size: 15px;
       }
     }
-    .cgv-cln{
-      padding: 10px;
+    .cgv-cln, .ml-cln, .pc-cln{
+      padding: 80px 10px;
+      .menu{
+        display: block;
+        .btn i{ font-size: 20px;}
+      }
       span h2{
         font-size: medium;
         letter-spacing: 2px;
@@ -171,7 +175,105 @@ export default {
 }
 
 }
+@media screen and (max-width: 768px) and (orientation: landscape){
+  /* Styles pour les smartphones en mode Paysage */
+  #app{
+    
+    .skills{
+      .skills-ctr{
+        .cln{
+          .flip-card-front span.ul ul{
+            width: 60%;
+          }
+          .flip-card-back span.ul{
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
 
+//TABLET
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles pour les écrans de 769px à 1024px de largeur */
+  #app{
+    .about-me{
+      height: none;
+      .presentation{
+        flex-direction: column-reverse;
+        width: 100%;
+        .rounded-bckgd{
+          height: 300px;
+          width: 300px;
+          transform: scale(80%) translate(0, 75%);
+          h1{
+            letter-spacing: 8px;
+          }
+        }
+        .rounded-bckgd.effect{
+          animation: loaderMobile 4s forwards;
+        }
+      }
+    }
+    .skills{
+      .skills-ctr{
+        .cln{
+          .flip-card-front span.ul ul{
+            width: 60%;
+          }
+          .flip-card-back span.ul{
+            width: 50%;
+          }
+        }
+      }
+    }
+    .work{
+      .row .cln .card{
+        float: initial;
+        margin: 15px auto;
+        border-radius: 15px;
+        min-height: 200px;
+        justify-content: center;
+        background-color: white;
+       
+      }
+    }
+    .contact{
+      .row{
+        height: auto;
+        margin: auto;
+        flex-direction: column-reverse;
+        .contact-card .card{
+          width: 75%;
+        }
+        .form{
+          padding: 0;
+          .title-form {
+            h2 {
+              font-size: 20px;
+              letter-spacing: 6px;
+            }
+          }
+          .row div{padding: 0;}
+          form{
+            border-radius: 15px;
+            padding: 15px;
+            border: 3px inset white;
+            box-shadow: 5px 4px 4px grey;
+            width: 75%;
+            margin-bottom: 40px;
+          }
+        }
+      }
+      .bckgd{
+        bottom: 0;
+        left: 0px;
+        width: 100%;
+      }
+    }
+  }
+}
 
 // Mobile Animations
 @keyframes loaderMobile{

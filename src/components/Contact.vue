@@ -149,7 +149,6 @@ export default {
 .contact{
     position: relative;
     .contact-row{
-        height: 700px;
         position: relative;
         margin: 60px;
         padding: 10px;
@@ -158,7 +157,7 @@ export default {
 
         .contact-card{
             .card{
-                width: 60%;
+                width: 70%;
                 margin: auto;
                 opacity: 0;
                 border: 1.5px inset white;

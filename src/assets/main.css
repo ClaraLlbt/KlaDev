@@ -50,6 +50,7 @@ body{
   height: 100vh;
   margin: 0 auto;
   font-family: 'Noto Serif Display', serif;
+  color: black;
 }
 button:active{
   border: none;
@@ -62,10 +63,14 @@ a:hover{
   transition: 0.4s;
 }
 /* All icons in Gold */
-i{
-  background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+i::before, .icon i::before{
+  background: linear-gradient(57deg, #ab9c7c, #cfc09f, #ffecb3, #cfc09f);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+i, .icon i{
+  color: tan;
 }
 
 /* Navbar Animations*/
@@ -127,6 +132,54 @@ main{
   margin: 3rem;
   height: 70%;
 }
+
+
+/*CGV, ML, PC DESIGN*/
+.CGV .row, .ML .row, .PC .row{
+  padding: 40px;
+}
+.CGV .row h1, .ML .row h1, .PC .row h1{
+  text-align: center;
+  letter-spacing: 15px;
+  background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cgv-cln, .ml-cln, .pc-cln{
+  padding: 85px 40px;
+  border: 3px inset white;
+  background: #f3f3f3;
+  border-radius: 10px;
+  position: relative;
+}
+.cgv-cln .menu, .ml-cln .menu, .pc-cln .menu{
+  position: absolute;
+  top: 3px;
+}
+.cgv-cln .menu::before, .ml-cln .menu::before, .pc-cln .menu::before{
+  content: "";
+              border-bottom: 1px solid lightgray;
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+}
+.cgv-cln .menu .btn i, .ml-cln .menu .btn i, .pc-cln .menu .btn i{
+  font-size: 30px;
+}
+.cgv-cln .span-cgv h2, .ml-cln .span-ml h2, .pc-cln .span-pc h2{
+  width: 100%;
+                  letter-spacing: 10px;
+                  font-size: x-large;
+                  font-weight: 800;
+}
+.cgv-cln .span-cgv h2::after, .ml-cln .span-ml h2::after, .pc-cln .span-pc h2::after{
+  display: block;
+  content: "";
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px black solid;
+}
+
 
 /* GLOBAL KEYFRAMES */
 @keyframes titleSlide{

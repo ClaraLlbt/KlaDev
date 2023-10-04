@@ -1,31 +1,27 @@
 <script>
 //import darkMode
-import { useDark, useToggle } from "@vueuse/core";
 
+import darkMode from "../components/modeDarkBtn.vue"
 export default {
     name: "Navbar",
+    components: { darkMode },
     data(){
       return {
-        dark: useDark(),
         mobileFormat : false,
       }
     },
     mounted(){
+
       this.navHidden()
       if (window.matchMedia("(max-width: 768px)").matches) {
                 /* La largeur minimum de l'affichage est 600 px inclus */
-                console.log("format mobile detecté")
                 this.mobileFormat = true
                 this.navHidden();
-            } else {
-                console.log("format mobile non detecté")
-                /* L'affichage est inférieur à 600px de large */
             }
     },
     methods: {
       navHidden(){
         const el = document.querySelector('.contact')
-        console.log(el);
         const mobileNav =  document.getElementsByClassName('navbar-mobile')
         document.addEventListener('scroll', () => { 
             const { scrollTop, scrollHeight ,clientHeight} = document.documentElement;
@@ -64,16 +60,13 @@ export default {
             </li>
 
             <li class="nav-item item-dark">
-                <button id="darkModeButton" type="button" role="button" class="btn btn-effect" aria-label="Bouton pour basculer en mode sombre">
-                    <i  v-if="this.dark == false" class="bi bi-moon icon-moon"></i>
-                    <i  v-else-if="this.dark == true" class="bi bi-brightness-high icon-light"></i>
-                </button>
+                <darkMode class="top-menu" />
             </li>
         </ul>
     </div>
 
     <!-- IF MOBILE FORMAT IS DETECTED, SHOW THIS MOBILE NAV -->
-    <div id="navbar-mobile" v-else-if="mobileFormat == true" class="container navbar navbar-mobile">
+    <div id="navbar-mobile" v-else-if="mobileFormat == true" class="container-fluid navbar navbar-mobile">
       <ul class="nav justify-content-center">
             <li class="nav-item mobile-item">
                 <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i></a>
@@ -88,11 +81,8 @@ export default {
                 <a class="nav-link" href="#contact"><i class="bi bi-envelope-at-fill"></i></a>
             </li>
 
-            <li class="nav-item item-dark mobile-item">
-              <button id="dkMobile" type="button" role="button" class="btn btn-effect" aria-label="Bouton pour basculer en mode sombre">
-                <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                <i class="bi bi-brightness-high icon-light" v-else-if="this.darl == true"></i>
-              </button>
+            <li class="nav-item item-dark">
+              <darkMode />
             </li>
         </ul></div>
 </template>
@@ -110,6 +100,7 @@ export default {
     }
     .item-dark{
       align-self: center;
+      margin: 0;
       .btn i{
         font-size: x-large;
       }
@@ -131,6 +122,9 @@ export default {
     a{
       padding: 0;
     }
+  }
+  .nav .nav-item.mobile-item::after,  .nav .nav-item.mobile-item::before{ 
+    content: none;
   }
   
 }

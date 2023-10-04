@@ -1,25 +1,24 @@
 <script>
+import ModeDarkBtn from '../components/modeDarkBtn.vue';
+
 export default {
-    name: 'MentionsLégales', 
+    name: 'MentionsLégales',
+    components: { ModeDarkBtn }
 }
 </script>
 
 <template>
     <div class="ML container">
-        
-        <div class="buttons">
-            <router-link to="/"><button class="btn"><i class="bi bi-arrow-left"></i></button></router-link>
-            <button id="darkModeButton" type="button" role="button" class="btn item-dark-cgv" aria-label="Bouton pour basculer en mode sombre">
-                <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
-            </button>
-        </div>
         <div class="row">
             <div class="col-12 title-cln">
                 <h1>•  Mentions légales •</h1>
             </div>
-            <div class="col-12 cgv-cln">
-                <span class="span-cgv">
+            <div class="col-12 ml-cln">
+                <div class="menu">
+                    <button class="btn"><router-link to="/"><i class="bi bi-arrow-left"></i></router-link></button>
+                    <ModeDarkBtn />
+                </div>
+                <span class="span-ml">
                     <h2>1. Informations générales</h2>
                     <p>Ce site web est édité par Kala DEV, développeur web indépendant enregistré sous le statut d'auto-entrepreneur, 
                         immatriculé sous le numéro 98003307000015,dont le siège social est situé à Boulogne-Sur-Mer. 
@@ -63,51 +62,3 @@ export default {
         
     </div>
 </template>
-
-<style lang="scss">
-    .ML{
-    .buttons{
-        position: absolute;
-        left: 0;
-        top: 0;
-        .btn{
-            width: 130px;
-            i{ font-size: 40px;}
-        }
-    }
-    .row{
-        padding: 40px;
-        h1{
-            text-align: center;
-            letter-spacing: 15px;
-            background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .cgv-title{
-            padding: 20px;
-        }
-        .cgv-cln{
-            padding: 40px;
-            border: 3px inset white;
-            background: #f3f3f3;
-            border-radius: 10px;
-            .span-cgv{
-                h2{
-                    width: 100%;
-                    letter-spacing: 10px;
-                    font-size: x-large;
-                    font-weight: 800;
-                }
-                h2::after{
-                    display: block;
-                    content: "";
-                    width: 100%;
-                    padding: 15px 0;
-                    border-bottom: 1px black solid;
-                }
-            }
-        }
-    }
-}
-</style>

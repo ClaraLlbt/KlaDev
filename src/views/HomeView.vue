@@ -1,7 +1,4 @@
 <script>
-//import darkMod
-import { darkMode } from '../utils';
-import { useDark } from "@vueuse/core";
 
 //import components
 import AboutMe from '../components/AboutMe.vue';
@@ -9,19 +6,19 @@ import Navbar from '../components/Navbar.vue';
 import Skills from '../components/skills.vue';
 import Work from '../components/Work.vue';
 import Contact from '../components/Contact.vue';
+import modeDarkBtn from '../components/modeDarkBtn.vue';
+
 
 export default {
   name : "home",
-  components : { AboutMe, Navbar, Skills, Work, Contact },
+  components : { AboutMe, Navbar, Skills, Work, Contact, modeDarkBtn },
   data(){
       return {
-        dark: useDark(),
         isLoading: true,
         loadedElement : false,
       }
     },
   mounted(){
-    darkMode()
     this.navbarLeft()
 
     setTimeout(() => {
@@ -73,10 +70,7 @@ export default {
             </li>
 
             <li class="nav-item item-dark" aria-label="Mode sombre">
-                <button id="darkModeButton" type="button" role="button" class="btn" aria-label="Bouton pour basculer en mode sombre">
-                    <div v-if="this.dark == false" class="i-area" aria-label="Mode sombre"><i class="bi bi-moon icon-moon"></i><i class="bi bi-moon icon-moon" id="icon-shadow"></i></div>
-                    <div  v-else-if="this.dark == true" class="i-area" aria-label="Mode clair"><i class="bi bi-brightness-high icon-light"></i><i class="bi bi-brightness-high icon-light" id="icon-shadow"></i></div>
-                </button>
+                <modeDarkBtn />
             </li>
         </ul>
   </nav>
@@ -97,7 +91,7 @@ export default {
   
   
   <footer  id="footer" class="container-fluid">
-    <p>Copyright©2023 KALADEV - <i class="bi bi-geo-alt-fill"></i> Boulogne-sur-Mer - <RouterLink to="/CGV">CGV</RouterLink> - <RouterLink to="/MentionsLégales">Mentions légales</RouterLink></p> 
+    <p>Copyright©2023 KALADEV - <i class="bi bi-geo-alt-fill"></i> Boulogne-sur-Mer - <router-link to="/CGV">CGV</router-link> - <router-link to="/MentionsLégales">Mentions légales</router-link></p> 
   </footer>
   
   </div>
@@ -119,7 +113,7 @@ export default {
 nav{
   position: fixed;
   z-index: 1;
-  left: 5%;
+  left: 2%;
   top: 25%;
   opacity: 0;
   transition: all 1s ease;
@@ -138,9 +132,8 @@ nav{
         }
         a i{
           font-size: 25px;
-          color: #E8E8E8;
           &:hover{
-            color: grey;
+            color: lightgray;
           }
         }
         i#icon-shadow{

@@ -1,25 +1,24 @@
 <script>
+import ModeDarkBtn from '../components/modeDarkBtn.vue';
+
 export default {
     name: "PC",
+    components: { ModeDarkBtn }
 }
 </script>
 
 <template>
-    <div class="CGV container">
-        
-        <div class="buttons">
-            <router-link to="/"><button class="btn"><i class="bi bi-arrow-left"></i></button></router-link>
-            <button id="darkModeButton" type="button" role="button" class="btn item-dark-cgv" aria-label="Bouton pour basculer en mode sombre">
-                <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
-            </button>
-        </div>
+    <div class="PC container">
         <div class="row">
             <div class="col-12 title-cln">
                 <h1>•  Politique de Confidentialité •</h1>
             </div>
-            <div class="col-12 cgv-cln">
-                <span class="span-cgv">
+            <div class="col-12 pc-cln">
+                <div class="menu">
+                    <button class="btn"><router-link to="/"><i class="bi bi-arrow-left"></i></router-link></button>
+                    <ModeDarkBtn />
+                </div>
+                <span class="span-pc">
                     <h2>1. Introduction</h2>
                     <p>La présente Politique de Confidentialité a pour objectif de vous informer sur la manière dont 
                         Kala DEV (ci-après dénommé "Le Développeur") collecte, 
@@ -72,50 +71,3 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
-    .CGV{
-    .buttons{
-        position: absolute;
-        left: 0;
-        top: 0;
-        .btn{
-            width: 130px;
-            i{ font-size: 40px;}
-        }
-    }
-    .row{
-        padding: 40px;
-        h1{
-            text-align: center;
-            letter-spacing: 15px;
-            background: linear-gradient(#cfc09f -87%, #634F30 -71%, #cfc09f -3%, #ffecb3 31%, #3a2c0f 144%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .cgv-title{
-            padding: 20px;
-        }
-        .cgv-cln{
-            padding: 40px;
-            border: 3px inset white;
-            background: #f3f3f3;
-            border-radius: 10px;
-            .span-cgv{
-                h2{
-                    width: 100%;
-                    letter-spacing: 10px;
-                    font-size: x-large;
-                    font-weight: 800;
-                }
-                h2::after{
-                    display: block;
-                    content: "";
-                    width: 100%;
-                    padding: 15px 0;
-                    border-bottom: 1px black solid;
-                }
-            }
-        }
-    }
-}
-</style>
