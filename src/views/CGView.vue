@@ -67,7 +67,7 @@ export default {
 
                     <h2>9. Loi Applicable et Juridiction compétente</h2>
                     <p>Les présentes Conditions sont régies par la loi [loi applicable] et tout litige sera soumis à la juridiction exclusive 
-                        des tribunaux de [ville ou région].</p>
+                        des tribunaux de Boulogne-sur-Mer.</p>
                     
                     <h2>10. Modification des Conditions</h2>
                     <p>Le Développeur se réserve le droit de modifier les présentes Conditions à tout moment. Les modifications seront 

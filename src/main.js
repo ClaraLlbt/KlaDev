@@ -1,4 +1,5 @@
 import './assets/main.css'
+import './assets/media-queries.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'

@@ -41,6 +41,7 @@ export default {
       </div>
       <div class="col-sm-12 col-lg-6">
         <div class="rounded-bckgd">
+          <img src="../assets/laptop.svg" alt="">
             <h1>•  Bienvenue   •</h1>
         </div>
       </div>
@@ -101,6 +102,12 @@ export default {
       height: 450px;
       margin: auto;
       transform: scale(1.5) translate(-50%, 0);
+      border: 1px solid tan;
+      img{
+        width: 100%;
+        border-radius: 50%;
+        opacity: 0;
+      }
       h1{
         position: absolute;
         top: 50%;
@@ -118,6 +125,10 @@ export default {
       h1{
         transition: opacity 1s 0.5s ease-in-out;
         opacity: 0;
+      }
+      img{ 
+        opacity: 1;
+        transition: opacity 1s 1.5s ease-in-out;
       }
     }
   }

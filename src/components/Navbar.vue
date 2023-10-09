@@ -44,7 +44,10 @@ export default {
 
 <template>
   <!-- IF MOBILE FORMAT IS NOT DETECTED, SHOW THIS NAV -->
-    <div v-if="mobileFormat == false" class="container navbar">
+    <div v-if="mobileFormat == false" class="container-fluid navbar">
+      <a class="navbar-brand" href="#">
+        <img src="../assets/queenbee-logo.svg" width="200" height="200" alt="">
+      </a>
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">HOME</a>
@@ -89,12 +92,16 @@ export default {
 
 <style lang="scss">
 .navbar{
-  transform: translateY(-100px);
+  transform: translateY(-195px);
   animation: deployeNav 1s 0.5s forwards;
-  justify-content: center;
+  .navbar-brand{
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
   .nav{
     font-size: x-large;
-    width: 100%;
+    margin: auto;
     .nav-item{
       margin: .5em 1em;
     }
@@ -117,12 +124,15 @@ export default {
   animation: deployeMobileNav 1.5s 1s forwards;
   box-shadow: inset -1px -4px 20px lightgray;
   background-color: white;
-  .nav .nav-item.mobile-item{ 
+  .nav{
+    width: 100%;
+     .nav-item.mobile-item{ 
     margin: auto;
     a{
       padding: 0;
     }
   }
+}
   .nav .nav-item.mobile-item::after,  .nav .nav-item.mobile-item::before{ 
     content: none;
   }
@@ -138,7 +148,7 @@ export default {
 
 @keyframes deployeNav {
   0% {
-    transform: translateY(-100px);
+    transform: translateY(-195px);
   }
   100% {
     transform: translateY(0);
