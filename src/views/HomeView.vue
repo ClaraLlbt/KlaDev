@@ -1,33 +1,32 @@
 <script>
 
 //import components
-import AboutMe from '../components/AboutMe.vue';
+import Banner from '../components/Banner.vue';
 import Navbar from '../components/Navbar.vue';
 import Skills from '../components/skills.vue';
 import Work from '../components/Work.vue';
 import Contact from '../components/Contact.vue';
 import modeDarkBtn from '../components/modeDarkBtn.vue';
+import Loader from '../components/Loader.vue';
 
 
 export default {
   name : "home",
-  components : { AboutMe, Navbar, Skills, Work, Contact, modeDarkBtn },
+  components : { Banner, Navbar, Skills, Work, Contact, modeDarkBtn, Loader },
   data(){
       return {
-        isLoading: true,
-        loadedElement : false,
+        loaderElement : true,
       }
     },
   mounted(){
     this.navbarLeft()
 
     setTimeout(() => {
-      if(this.isLoading == true){
-          this.loadedElement = true
-        } else if(document.location = "#skills"){
-          this.loadedElement = true
+        if(document.readyState != 200){
+          console.log("Hello, l'application vient de se lancer");
+          this.loaderElement = false;
         }
-      }, 1300);
+      }, 2300);
 
     
   },
@@ -75,19 +74,21 @@ export default {
         </ul>
   </nav>
 
+  <Loader v-if="this.loaderElement == true" />
 
-  <Navbar />
+
+  <div class="main" v-else-if="this.loaderElement == false">
+
+    <Navbar />
 
   
-  <AboutMe v-model="isLoading"/>
-
-  <div v-show="this.loadedElement" ref="isLoading">
+    <Banner />
   
     <Skills/>
 
     <Work/>
 
-  <Contact/>
+    <Contact/>
   
   
   <footer  id="footer" class="container-fluid">
@@ -100,6 +101,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.main{
+  width: 100%;
+  height: 100%;
+}
 .bckgd-top{
   position: absolute;
   transform: rotate(180deg);
