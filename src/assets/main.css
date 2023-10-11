@@ -2,7 +2,7 @@
 /********************** DarkMode Design **********************/
 .dark{
   color-scheme: dark;
-  --color-background: #16171d; /* it's better to use a dark grey color instead of pure black */
+  --color-background: #222831; /* it's better to use a dark grey color instead of pure black */
   --color-heading: var(--vt-c-text-dark-1);
   --color-text: var(--vt-c-text-dark-2);
 }  
@@ -16,9 +16,11 @@
 .dark button{
   color: #adb5bd;
 }
-.dark #app .flip-card-back{
-  color: black;
+.dark .skills-ctr .skills-row .cln .bckd-dgr, 
+.dark .skills-ctr .skills-row .cln .bckd-gr{
+  opacity: 100%;
 }
+.dark .skills-ctr .skills-row .cln.gr{ color: white;}
 .dark #app .work .card{
   filter: brightness(0.9);
 }
@@ -43,9 +45,7 @@
 }
 
 /********************** Global Design **********************/
-body{
-  background: #00000003;
-}
+
 #app {
   height: 100vh;
   margin: 0 auto;

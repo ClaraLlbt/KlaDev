@@ -166,7 +166,6 @@ export default {
                 transition: transform .5s ease-in-out;
                 border-radius: 16px;
                 font-weight: bolder;
-                box-shadow: 5px 4px 12px 0px white;
                 .card-title{
                     text-align: center;
                     padding: 10px;

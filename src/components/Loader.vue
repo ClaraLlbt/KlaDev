@@ -11,7 +11,7 @@ export default {
 </script>
 <style lang="scss">
 .loader{
-    position: relative;
+    position: absolute;
     left: 0;
     right: 0;
     margin: auto;

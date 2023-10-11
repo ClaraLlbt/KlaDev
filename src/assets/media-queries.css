@@ -1,6 +1,6 @@
 /* Mobile */
 @media screen and (max-width: 768px) {
-#app { height: 100vh;}
+#app { height: 100%;}
 #app .bckgd-top{
     top: 0;
     right: 0;
@@ -11,7 +11,7 @@
 #app .rotate-center{
 	animation: loaderMobile 1.5s ease-in-out infinite forwards;
 }
-#app .menu{ display: none;}
+#app .main-menu{ display: none;}
 
 /*.ABOUT-ME*/
 #app .about-me{ height: auto;}
@@ -34,22 +34,11 @@
 }
 
 /*.SKILLS*/
-#app .skills .diploma-ctr .diploma .infos{ width: 100%;}
-#app .skills .diploma-ctr .diploma .mention{display: none;}
 
-#app .skills-ctr{ height: 100%;}
-#app .skills .skills-ctr .cln{
-    margin: 0 0 45px 0;
-    height: 450px;
-}
+#app .about-ctr .about-row .about .about-txt{ width: 90%;}
+.about-ctr .about-row .about .about-txt p.text{ text-align: justify;}
 
-#app .skills .skills-ctr .cln .flip-card .flip-card-inner .title { font-size: smaller;}
 
-#app .skills .skills-ctr .cln .flip-card .flip-card-inner .hexa-bckgd,
-#app .skills .skills-ctr .cln .flip-card .flip-card-inner .hexa-shadow{ font-size: 450px;}
-
-#app .skills .skills-ctr .cln .flip-card-back span.ul{ width: 83%;}
-#app .skills .skills-ctr .cln .flip-card-back span.ul p {font-size: 12px;}
 
 
 /*.WORK*/
@@ -117,16 +106,6 @@
 
 }
 
-@media screen and (max-width: 768px) and (orientation: landscape){
-    /* Styles pour les smartphones en mode Paysage */
-    #app .skills .skills-ctr .cl .flip-card-front span.ul ul{
-        width: 60%;
-    }
-    #app .skills .skills-ctr .cl .flip-card-back span.ul ul{
-        width: 50%;
-    }     
-}
-
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     /* Styles pour les écrans de 769px à 1024px de largeur */
@@ -135,16 +114,16 @@
     flex-direction: column-reverse;
 }
 #app .about-me .presentation .rounded-bckgd{
-    height: 500px;
-    width: 500px;
     transform: scale(80%) translate(0, 75%);
+    height: 300px;
+    width: 300px;
+    margin: 50px auto;
 }
 #app .about-me .presentation .rounded-bckgd h1{letter-spacing: 8px;}
 #app .about-me .presentation .rounded-bckgd.effect{
     animation: loaderMobile 4s forwards;
 }
 
-#app .skills .skills-ctr .cln .flip-card-back span.ul{width: 100%;}
 
 #app .work .cln .card{
     float: initial;

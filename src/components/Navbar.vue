@@ -46,14 +46,14 @@ export default {
   <!-- IF MOBILE FORMAT IS NOT DETECTED, SHOW THIS NAV -->
     <div v-if="mobileFormat == false" class="container-fluid navbar">
       <a class="navbar-brand" href="#">
-        <img src="../assets/queenbee-logo.svg" width="200" height="200" alt="">
+        <img src="../assets/queenbee-logo.svg" width="150" height="150" alt="">
       </a>
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#skills">SKILLS</a>
+                <a class="nav-link" href="#aboutthebee">ABOUT</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#work">WORK</a>
@@ -75,7 +75,7 @@ export default {
                 <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i></a>
             </li>
             <li class="nav-item mobile-item">
-                <a class="nav-link" href="#skills"><i class="bi bi-gear"></i></a>
+                <a class="nav-link" href="#aboutthebee"><i class="bi bi-gear"></i></a>
             </li>
             <li class="nav-item mobile-item">
                 <a class="nav-link" href="#work"><i class="bi bi-code-slash"></i></a>

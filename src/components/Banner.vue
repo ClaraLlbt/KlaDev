@@ -25,18 +25,13 @@ export default {
     <div class="row presentation">
       <div class="col-12 col-lg-6 presentation-txt justify-content-start">
         <div class="has-animation">
-          <h2>KALA DEVELOPS - Création de site web</h2>
+          <h2>KALA DEVELOPS - Agence web</h2>
           <h2>L'Excellence au coeur de l'Hexagone</h2>
         </div>
         <div class="has-animation">
-          <p class="text">Bienvenue chez Kala Develops, une micro-entreprise basée à Boulogne-sur-Mer, 
-            spécialisée dans le développement web et les applications front-end et back-end. Je suis dévouée 
-            est passionnée par l'innovation numérique et s'engage à créer des solutions web exceptionnelles. 
-            Nous combinons les dernières technologies avec des normes de qualité strictes pour offrir des sites web et 
-            des applications puissants, conviviaux et adaptés à vos besoins. Que vous soyez une petite entreprise locale 
-            ou une entreprise internationale, nous sommes là pour vous accompagner. Notre approche transparente et 
-            notre collaboration étroite avec nos clients garantissent des résultats exceptionnels. 
-            Contactez-nous pour transformer vos idées en réalité numérique et prospérer en ligne avec Kala Develops.</p>
+          <p class="text">Boostez votre présence en ligne avec Kala Develops. 
+            Optimiser votre succès numérique et mettez en avant votre 
+            entreprise !</p>
         </div>
         <div class="networks-link">
           <ul>
@@ -71,7 +66,7 @@ export default {
           opacity: 0;
         } 
         p{ 
-          font-size: larger;
+          font-size: 20px;
         }
         &.animate-in{
           h2{

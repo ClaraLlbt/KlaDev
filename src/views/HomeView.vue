@@ -3,7 +3,7 @@
 //import components
 import Banner from '../components/Banner.vue';
 import Navbar from '../components/Navbar.vue';
-import Skills from '../components/skills.vue';
+import About from '../components/About.vue';
 import Work from '../components/Work.vue';
 import Contact from '../components/Contact.vue';
 import modeDarkBtn from '../components/modeDarkBtn.vue';
@@ -12,7 +12,7 @@ import Loader from '../components/Loader.vue';
 
 export default {
   name : "home",
-  components : { Banner, Navbar, Skills, Work, Contact, modeDarkBtn, Loader },
+  components : { Banner, Navbar, About, Work, Contact, modeDarkBtn, Loader },
   data(){
       return {
         loaderElement : true,
@@ -53,13 +53,13 @@ export default {
   
   <img class="bckgd-top" src="../assets/images/white-hewagone-form.png" alt="">
 
-  <nav class="menu">
+  <nav class="main-menu">
     <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a aria-current="page" href="#" aria-label="Home"><i class="bi bi-house-door-fill"></i><i class="bi bi-house-door-fill" id="icon-shadow"></i></a>
             </li>
             <li class="nav-item">
-                <a href="#skills" aria-label="Skills"><i class="bi bi-gear"></i><i class="bi bi-gear" id="icon-shadow"></i></a>
+                <a href="#aboutthebee" aria-label="About the Bee"><i class="bi bi-gear"></i><i class="bi bi-gear" id="icon-shadow"></i></a>
             </li>
             <li class="nav-item">
                 <a href="#work" aria-label="Works"><i class="bi bi-code-slash"></i><i class="bi bi-code-slash" id="icon-shadow"></i></a>
@@ -84,7 +84,7 @@ export default {
   
     <Banner />
   
-    <Skills/>
+    <About/>
 
     <Work/>
 
